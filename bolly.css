@@ -1,0 +1,66 @@
+.heading{
+    text-align: center;
+    text-decoration: dashed;
+    color: yellowgreen;
+}
+
+body{
+    /* background-color: black; */
+    color: rgb(50, 205, 58);
+    /* font-weight: 400; */
+    /* background-image: url("{{ url_for('static',filename='theatre_img.png')}}"); */
+}
+
+/* .intro{
+    /* margin-left:45%; */
+/* }  */
+
+.selectbox{
+    height: 50px;
+    width: 500px;
+    color: red;
+    /* margin-left: 30%; */
+    background-color: black;
+}
+
+.Recommend{
+    margin-top: 1em;
+    height: 50px;
+    border-radius: 25%;
+    color: red;
+    /* margin-left: 43%; */
+    background-color: black;
+
+}
+
+.Recommend:hover{
+    background-color: goldenrod;
+}
+
+a{
+    /* text-align: ; */
+    color: yellow;
+    text-align:start;
+    font-size: 1.5em;
+    /* font-display: ; */
+}
+
+img{
+    margin-left: -2em;
+    width: 250px;
+    height: 200px;
+    
+}
+
+.movie{
+    padding: 50px;
+  /* background-color: green; */
+  transition: transform .5s; /* Animation */
+  width: 150px;
+  height: 200px;
+  /* margin: auto; */
+}
+
+.movie:hover{ 
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

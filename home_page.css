@@ -1,0 +1,35 @@
+.bg{
+    /* background-color: black; */
+    color: goldenrod;
+}
+
+.hollywood{
+    display: inline;
+    margin-left: -150px;
+    margin-top: 10em;
+    transition: transform .5s; /* Animation */
+    height: 100px;
+    border-radius: 25%;
+    width: 200px;
+    background-color: blue;
+}
+
+.bollywood{
+    display: inline;
+    margin-left: 150px;
+    height: 100px;
+    width: 200px;
+    transition: transform .5s; /* Animation */
+    
+    border-radius: 25%;
+    background-color: yellow;
+}
+
+
+.bollywood:hover{ 
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.hollywood:hover{ 
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

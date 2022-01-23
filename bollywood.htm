@@ -1,0 +1,4284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='bolly.css')}}">
+    <title>Bollywood</title>
+</head>
+<body background="{{ url_for('static',filename='theatre_img.png')}}" style="background-repeat: no-repeat;">
+    <center>
+    <h1 class="heading">This is the Bollywood Movie prediction</h1>
+
+    <br><br><br>
+    <p class="intro">Type the name of the movie you last liked!!!</p>
+
+    <form action="{{ url_for('bolly_predict')}}"method="post" id="bolly_movie">
+    
+        <select id="bolly_movie" form="bolly_movie" name="bolly_movie_name" class="selectbox">
+            <option>Uri: The Surgical Strike</option>
+            <option>Battalion 609</option>
+            <option>The Accidental Prime Minister</option>
+            <option>Why Cheat India</option>
+            <option>Evening Shadows</option>
+            <option>Soni</option>
+            <option>Fraud Saiyyan</option>
+            <option>Bombairiya</option>
+            <option>Manikarnika: The Queen of Jhansi</option>
+            <option>Thackeray</option>
+            <option>Amavas</option>
+            <option>Gully Boy</option>
+            <option>Hum chaar</option>
+            <option>Total Dhamaal</option>
+            <option>Sonchiriya</option>
+            <option>Badla</option>
+            <option>Mard Ko Dard Nahin Hota</option>
+            <option>Hamid</option>
+            <option>Photograph</option>
+            <option>Risknamaa</option>
+            <option>Mere Pyare Prime Minister</option>
+            <option>22 Yards</option>
+            <option>Kesari</option>
+            <option>Notebook</option>
+            <option>Junglee</option>
+            <option>Gone Kesh</option>
+            <option>Albert Pinto Ko Gussa Kyun Aata Hai?</option>
+            <option>The Tashkent Files</option>
+            <option>Kalank</option>
+            <option>Setters</option>
+            <option>Student of the Year 2</option>
+            <option>PM Narendra Modi</option>
+            <option>De De Pyaar De</option>
+            <option>India's Most Wanted</option>
+            <option>Yeh Hai India</option>
+            <option>Khamoshi</option>
+            <option>Kabir Singh</option>
+            <option>Article 15</option>
+            <option>One Day: Justice Delivered</option>
+            <option>Hume Tumse Pyaar Kitna</option>
+            <option>Super 30</option>
+            <option>Family of Thakurganj</option>
+            <option>Batla House</option>
+            <option>Jhootha Kahin Ka</option>
+            <option>Judgementall Hai Kya</option>
+            <option>Chicken Curry Law</option>
+            <option>Arjun Patiala</option>
+            <option>Jabariya Jodi</option>
+            <option>Pranaam</option>
+            <option>The Sky Is Pink</option>
+            <option>Mission Mangal</option>
+            <option>Saaho</option>
+            <option>Dream Girl</option>
+            <option>Section 375</option>
+            <option>The Zoya Factor</option>
+            <option>Pal Pal Dil Ke Paas</option>
+            <option>Prassthanam</option>
+            <option>P Se Pyaar F Se Faraar</option>
+            <option>Ghost</option>
+            <option>Bala</option>
+            <option>#Yaaram</option>
+            <option>Housefull 4</option>
+            <option>Saand Ki Aankh</option>
+            <option>Made in China</option>
+            <option>Ujda Chaman</option>
+            <option>Bypass Road</option>
+            <option>Satellite Shankar</option>
+            <option>Kaalakaandi</option>
+            <option>Vodka Diaries</option>
+            <option>My Birthday Song</option>
+            <option>Nirdosh</option>
+            <option>Mukkabaaz</option>
+            <option>Union Leader</option>
+            <option>Love Per Square Foot</option>
+            <option>Aiyaary</option>
+            <option>Padmaavat</option>
+            <option>Kuchh Bheege Alfaaz</option>
+            <option>Jaane kyun de yaaron</option>
+            <option>Veerey Ki Wedding</option>
+            <option>Sonu Ke Titu Ki Sweety</option>
+            <option>Hate Story IV</option>
+            <option>Dil Juunglee</option>
+            <option>3 Storeys</option>
+            <option>Raid</option>
+            <option>Hichki</option>
+            <option>Missing</option>
+            <option>Baaghi 2</option>
+            <option>October</option>
+            <option>Mercury</option>
+            <option>Beyond the Clouds</option>
+            <option>Nanu Ki Jaanu</option>
+            <option>Daas Dev</option>
+            <option>Omerta</option>
+            <option>Raazi</option>
+            <option>Hope Aur Hum</option>
+            <option>High Jack</option>
+            <option>Khajoor Pe Atke</option>
+            <option>Parmanu: The Story of Pokhran</option>
+            <option>Bioscopewala</option>
+            <option>Bhavesh Joshi Superhero</option>
+            <option>Phamous</option>
+            <option>Race 3</option>
+            <option>Dhadak</option>
+            <option>Sanju</option>
+            <option>Saheb Biwi Aur Gangster 3</option>
+            <option>Nawabzaade</option>
+            <option>Mulk</option>
+            <option>Brij Mohan Amar Rahe</option>
+            <option>Karwaan</option>
+            <option>Gold</option>
+            <option>Satyameva Jayate</option>
+            <option>Happy Phirr Bhag Jayegi</option>
+            <option>Genius</option>
+            <option>Yamla Pagla Deewana Phir Se...</option>
+            <option>Stree</option>
+            <option>Paltan</option>
+            <option>Laila Majnu</option>
+            <option>Gali Guleiyan</option>
+            <option>Halkaa</option>
+            <option>Pataakha</option>
+            <option>Batti Gul Meter Chalu</option>
+            <option>Love Sonia</option>
+            <option>Manto</option>
+            <option>Ishqeria</option>
+            <option>Manmarziyaan</option>
+            <option>Mitron</option>
+            <option>Sui Dhaaga: Made in India</option>
+            <option>Baazaar</option>
+            <option>Jalebi</option>
+            <option>FryDay</option>
+            <option>Tumbbad</option>
+            <option>Helicopter Eela</option>
+            <option>Namaste England</option>
+            <option>Andhadhun</option>
+            <option>Badhaai Ho</option>
+            <option>5 Weddings</option>
+            <option>Kaashi in Search of Ganga</option>
+            <option>Dassehra</option>
+            <option>The Journey of Karma</option>
+            <option>Jack & Dil</option>
+            <option>Mohalla Assi</option>
+            <option>Pihu</option>
+            <option>Bhaiaji Superhit</option>
+            <option>Rajma Chawal</option>
+            <option>Zero</option>
+            <option>Simmba</option>
+            <option>Tiger Zinda Hai</option>
+            <option>Golmaal Again</option>
+            <option>Judwaa 2</option>
+            <option>OK Jaanu</option>
+            <option>Coffee with D</option>
+            <option>Kaabil</option>
+            <option>Raees</option>
+            <option>Thugs of Hindostan</option>
+            <option>Hind Ka Napak Ko Jawab</option>
+            <option>Running Shaadi</option>
+            <option>The Ghazi Attack</option>
+            <option>Irada</option>
+            <option>Rangoon</option>
+            <option>Wedding Anniversary</option>
+            <option>Jeena Isi Ka Naam Hai</option>
+            <option>Badrinath Ki Dulhania</option>
+            <option>Trapped</option>
+            <option>Aa Gaya Hero</option>
+            <option>Mantra</option>
+            <option>Phillauri</option>
+            <option>Machine</option>
+            <option>Bhanwarey</option>
+            <option>Anaarkali of Aarah</option>
+            <option>Naam Shabana</option>
+            <option>Hotel Salvation</option>
+            <option>Begum Jaan</option>
+            <option>Noor</option>
+            <option>Ek Rani Aisi Bhi Thi</option>
+            <option>Maatr</option>
+            <option>Sarkar 3</option>
+            <option>Jattu Engineer</option>
+            <option>Half Girlfriend</option>
+            <option>Meri Pyaari Bindu</option>
+            <option>Sachin</option>
+            <option>Hindi Medium</option>
+            <option>Sweetiee Weds NRI</option>
+            <option>Dobaara: See Your Evil</option>
+            <option>Flat 211</option>
+            <option>Dear Maya</option>
+            <option>Raabta</option>
+            <option>Behen Hogi Teri</option>
+            <option>Tubelight</option>
+            <option>Bank Chor</option>
+            <option>Ek Haseena Thi Ek Deewana Tha</option>
+            <option>Jagga Jasoos</option>
+            <option>Shab</option>
+            <option>Lipstick Under My Burkha</option>
+            <option>Bachche Kachche Sachche</option>
+            <option>G Kutta Se</option>
+            <option>Indu Sarkar</option>
+            <option>Jab Harry Met Sejal</option>
+            <option>Munna Michael</option>
+            <option>Toilet - Ek Prem Katha</option>
+            <option>Mubarakan</option>
+            <option>Guest iin London</option>
+            <option>Bareilly Ki Barfi</option>
+            <option>Babumoshai Bandookbaaz</option>
+            <option>YADVI: The Dignified Princess</option>
+            <option>Qaidi Band</option>
+            <option>Shubh Mangal Saavdhan</option>
+            <option>Raag Desh</option>
+            <option>Daddy</option>
+            <option>Simran</option>
+            <option>Lucknow Central</option>
+            <option>A Gentleman</option>
+            <option>Viceroy's House</option>
+            <option>Patel Ki Punjabi Shaadi</option>
+            <option>Newton</option>
+            <option>The Final Exit</option>
+            <option>Bhoomi</option>
+            <option>Haseena Parkar</option>
+            <option>J.D.</option>
+            <option>Haraamkhor</option>
+            <option>Poster Boys</option>
+            <option>Mom</option>
+            <option>Chef</option>
+            <option>Ranchi Diaries</option>
+            <option>Babuji Ek Ticket Bambai</option>
+            <option>Rukh</option>
+            <option>Secret Superstar</option>
+            <option>The House Next Door</option>
+            <option>Ribbon</option>
+            <option>Shaadi Mein Zaroor Aana</option>
+            <option>Jia aur Jia</option>
+            <option>Qarib Qarib Singlle</option>
+            <option>Aksar 2</option>
+            <option>Panchlait</option>
+            <option>Tumhari Sulu</option>
+            <option>Julie 2</option>
+            <option>Dark wind</option>
+            <option>Firangi</option>
+            <option>Fukrey Returns</option>
+            <option>Monsoon Shootout</option>
+            <option>Ajji</option>
+            <option>Chalk N Duster</option>
+            <option>Rebellious Flower</option>
+            <option>Shackle</option>
+            <option>Airlift</option>
+            <option>Sallu Ki Shaadi</option>
+            <option>Saala Khadoos</option>
+            <option>Kyaa Kool Hain Hum 3</option>
+            <option>Mastizaade</option>
+            <option>Dil Jo Na Keh Saka</option>
+            <option>Jugni</option>
+            <option>Ghayal Once Again</option>
+            <option>Fitoor</option>
+            <option>Sanam Re</option>
+            <option>Direct Ishq</option>
+            <option>Ishq Forever</option>
+            <option>LoveShhuda</option>
+            <option>Neerja</option>
+            <option>Aligarh</option>
+            <option>Bollywood Diaries</option>
+            <option>Love Shagun</option>
+            <option>Tere Bin Laden: Dead Or Alive</option>
+            <option>Jai Gangaajal</option>
+            <option>Kapoor & Sons</option>
+            <option>Rocky Handsome</option>
+            <option>Love Games</option>
+            <option>Fan</option>
+            <option>Nil Battey Sannata</option>
+            <option>Laal Rang</option>
+            <option>Baaghi</option>
+            <option>Global Baba</option>
+            <option>Shortcut Safari</option>
+            <option>The Blueberry Hunt</option>
+            <option>Santa Banta Pvt Ltd</option>
+            <option>Traffic</option>
+            <option>1920 London</option>
+            <option>Azhar</option>
+            <option>Buddha in a Traffic Jam</option>
+            <option>Murari the Mad Gentleman</option>
+            <option>Dear Dad</option>
+            <option>Phobia</option>
+            <option>Sarbjit</option>
+            <option>Veerappan</option>
+            <option>Do Lafzon Ki Kahani</option>
+            <option>Te3n</option>
+            <option>Udta Punjab</option>
+            <option>khel toh ab shuru hoga</option>
+            <option>Luv U Alia</option>
+            <option>7 Hours to Go</option>
+            <option>Raman Raghav 2.0</option>
+            <option>Junooniyat</option>
+            <option>Rough Book</option>
+            <option>Dhanak</option>
+            <option>Fredrick</option>
+            <option>Dil Toh Deewana Hai</option>
+            <option>Sultan</option>
+            <option>Brahman Naman</option>
+            <option>Great Grand Masti</option>
+            <option>Waiting</option>
+            <option>Ishq Click</option>
+            <option>M Cream</option>
+            <option>Madaari</option>
+            <option>Dishoom</option>
+            <option>Fever</option>
+            <option>Rustom</option>
+            <option>Hai Apna Dil Toh Awara</option>
+            <option>Mohenjo Daro</option>
+            <option>Happy Bhag Jayegi</option>
+            <option>Warrior Savitri</option>
+            <option>A Flying Jatt</option>
+            <option>Baar Baar Dekho</option>
+            <option>Freaky Ali</option>
+            <option>Raaz Reboot</option>
+            <option>Pink</option>
+            <option>Parched</option>
+            <option>Banjo</option>
+            <option>Days of Tafree</option>
+            <option>Wah Taj</option>
+            <option>Island City</option>
+            <option>Ek Kahani Julie Ki</option>
+            <option>M.S. Dhoni: The Untold Story</option>
+            <option>MSG the Warrior: Lion Heart</option>
+            <option>Tutak Tutak Tutiya</option>
+            <option>Motu Patlu: King of Kings</option>
+            <option>Anna</option>
+            <option>Fuddu</option>
+            <option>Saat Uchakkey</option>
+            <option>Beiimaan Love</option>
+            <option>Umrika</option>
+            <option>Shivaay</option>
+            <option>Dongri Ka Raja</option>
+            <option>Ae Dil Hai Mushkil</option>
+            <option>Tum Bin 2</option>
+            <option>Rock On 2</option>
+            <option>Force 2</option>
+            <option>Dear Zindagi</option>
+            <option>Befikre</option>
+            <option>Moh Maya Money</option>
+            <option>Shorgul</option>
+            <option>Saansein: The Last Breath</option>
+            <option>Ki & Ka</option>
+            <option>Wajah Tum Ho</option>
+            <option>Dangal</option>
+            <option>Mirzya</option>
+            <option>Prem Ratan Dhan Payo</option>
+            <option>Tanu Weds Manu Returns</option>
+            <option>31st October</option>
+            <option>Any Body Can Dance 2</option>
+            <option>Dilwale</option>
+            <option>Bajrangi Bhaijaan</option>
+            <option>Bajirao Mastani</option>
+            <option>Welcome Back</option>
+            <option>Baby</option>
+            <option>Singh Is Bliing</option>
+            <option>Gabbar is Back</option>
+            <option>Mumbai Can Dance Saalaa</option>
+            <option>Alone</option>
+            <option>Tevar</option>
+            <option>Sharafat Gayi Tel Lene</option>
+            <option>Dolly Ki Doli</option>
+            <option>Hawaizaada</option>
+            <option>Khamoshiyan</option>
+            <option>Rahasya</option>
+            <option>Jai Jawaan Jai Kisaan</option>
+            <option>Shamitabh</option>
+            <option>Roy</option>
+            <option>Badlapur</option>
+            <option>Crazy Cukkad Family</option>
+            <option>Take It Easy</option>
+            <option>Qissa: The Tale of a Lonely Ghost</option>
+            <option>Ab Tak Chhappan 2</option>
+            <option>Dum Laga Ke Haisha</option>
+            <option>Dirty Politics</option>
+            <option>MSG: The Messenger of God</option>
+            <option>Badmashiyaan</option>
+            <option>Coffee Bloom</option>
+            <option>Hey Bro</option>
+            <option>NH10</option>
+            <option>Hunterrr</option>
+            <option>Detective Byomkesh Bakshy!</option>
+            <option>Luckhnowi Ishq</option>
+            <option>Court</option>
+            <option>Margarita with a Straw</option>
+            <option>Ek Paheli Leela</option>
+            <option>Barkhaa</option>
+            <option>Mr. X</option>
+            <option>NH-8: Road to Nidhivan</option>
+            <option>Dilliwaali Zaalim Girlfriend</option>
+            <option>Dharam Sankat Mein</option>
+            <option>Kaagaz Ke Fools</option>
+            <option>Kuch Kuch Locha Hai</option>
+            <option>Piku</option>
+            <option>Bombay Velvet</option>
+            <option>I Love Desi</option>
+            <option>Dil Dhadakne Do</option>
+            <option>Welcome to Karachi</option>
+            <option>P Se PM Tak</option>
+            <option>Mere Genie Uncle</option>
+            <option>Hamari Adhuri Kahani</option>
+            <option>Miss Tanakpur Haazir Ho</option>
+            <option>Uvaa</option>
+            <option>Ishq Ke Parindey</option>
+            <option>Ishqedarriyaan</option>
+            <option>Sabki Bajegi Band</option>
+            <option>Masaan</option>
+            <option>Guddu Rangeela</option>
+            <option>Bezubaan Ishq</option>
+            <option>Aisa Yeh Jahaan</option>
+            <option>Second Hand Husband</option>
+            <option>I Love NY</option>
+            <option>Main Hoon Rajinikanth</option>
+            <option>Kaun Kitney Paani Mein</option>
+            <option>Drishyam</option>
+            <option>Bangistan</option>
+            <option>All Is Well</option>
+            <option>Brothers</option>
+            <option>Gour Hari Dastaan: The Freedom File</option>
+            <option>Manjhi: The Mountain Man</option>
+            <option>Thoda Lutf Thoda Ishq</option>
+            <option>Phantom</option>
+            <option>Hero</option>
+            <option>Sorry Daddy</option>
+            <option>Talvar</option>
+            <option>Katti Batti</option>
+            <option>Meeruthiya Gangsters</option>
+            <option>MSG 2 the Messenger</option>
+            <option>Calendar Girls</option>
+            <option>Bhaag Johnny</option>
+            <option>Jazbaa</option>
+            <option>Bumper Draw</option>
+            <option>Chinar Daastaan-E-Ishq</option>
+            <option>Kis Kisko Pyaar Karoon</option>
+            <option>Pyaar Ka Punchnama 2</option>
+            <option>Wedding Pullav</option>
+            <option>Shaandaar</option>
+            <option>Titli</option>
+            <option>Guddu Ki Gun</option>
+            <option>The Silent Heroes</option>
+            <option>Ranbanka</option>
+            <option>Sholay</option>
+            <option>Dedh Ishqiya</option>
+            <option>Karle Pyaar Karle</option>
+            <option>Om Dar-B-Dar</option>
+            <option>Paranthe Wali Gali</option>
+            <option>Strings of Passion</option>
+            <option>Gunday</option>
+            <option>Jai Ho</option>
+            <option>Hasee Toh Phasee</option>
+            <option>Heartless</option>
+            <option>Ya Rab</option>
+            <option>Darr @ the Mall</option>
+            <option>One by Two</option>
+            <option>Babloo Happy Hai</option>
+            <option>Highway</option>
+            <option>Gulabi Gang</option>
+            <option>Shaadi Ke Side Effects</option>
+            <option>Gulaab Gang</option>
+            <option>Queen</option>
+            <option>Bewakoofiyaan</option>
+            <option>Total Siyapaa</option>
+            <option>Karar: The Deal</option>
+            <option>Lakshmi</option>
+            <option>Ragini MMS 2</option>
+            <option>Dishkiyaoon</option>
+            <option>Ankhon Dekhi</option>
+            <option>Gang of Ghosts</option>
+            <option>Anuradha</option>
+            <option>W</option>
+            <option>O Teri</option>
+            <option>Honour Killing</option>
+            <option>2 States</option>
+            <option>Jal</option>
+            <option>Bhoothnath Returns</option>
+            <option>Main Tera Hero</option>
+            <option>Lucky Kabootar</option>
+            <option>Station</option>
+            <option>Youngistaan</option>
+            <option>Samrat & Co.</option>
+            <option>Purani Jeans</option>
+            <option>Kya Dilli Kya Lahore</option>
+            <option>Koyelaanchal</option>
+            <option>Manjunath</option>
+            <option>Dekh Tamasha Dekh</option>
+            <option>Mastram</option>
+            <option>The Xpose</option>
+            <option>Children of War</option>
+            <option>Hawaa Hawaai</option>
+            <option>Kahin Hai Mera Pyar</option>
+            <option>Kuku Mathur Ki Jhand Ho Gayi</option>
+            <option>Heropanti</option>
+            <option>City Lights</option>
+            <option>Filmistaan</option>
+            <option>Revolver Rani</option>
+            <option>Kaanchi</option>
+            <option>Machhli Jal Ki Rani Hai</option>
+            <option>Khwaabb</option>
+            <option>Yeh Hai Bakrapur</option>
+            <option>Ek Villain</option>
+            <option>Bobby Jasoos</option>
+            <option>Humshakals</option>
+            <option>Humpty Sharma Ki Dulhania</option>
+            <option>Hate Story 2</option>
+            <option>Lekar Hum Deewana Dil</option>
+            <option>Riyasat</option>
+            <option>Amit Sahni Ki List</option>
+            <option>Holiday</option>
+            <option>Fugly</option>
+            <option>Bazaar E Husn</option>
+            <option>Pizza</option>
+            <option>It's Entertainment</option>
+            <option>Singham Returns</option>
+            <option>Mardaani</option>
+            <option>Raja Natwarlal</option>
+            <option>Mary Kom</option>
+            <option>Creature</option>
+            <option>Finding Fanny</option>
+            <option>Khoobsurat</option>
+            <option>3 AM: A Paranormal Experience</option>
+            <option>Kick</option>
+            <option>M.A.D: Mad About Dance</option>
+            <option>Mumbhai Connection</option>
+            <option>Life Is Beautiful</option>
+            <option>Desi Kattey</option>
+            <option>Haider</option>
+            <option>Bang Bang</option>
+            <option>Spark</option>
+            <option>Daawat-e-Ishq</option>
+            <option>Balwinder Singh Famous Ho Gaya</option>
+            <option>Jigariyaa</option>
+            <option>Tamanchey: Pyar Mein Dil Pe Maar De Goli</option>
+            <option>Mumbai 125 KM 3D</option>
+            <option>Meinu Ek Ladki Chaahiye</option>
+            <option>Chaarfutiya Chhokare</option>
+            <option>Sonali Cable</option>
+            <option>Happy New Year</option>
+            <option>Super Nani</option>
+            <option>Ekkees Toppon Ki Salaami</option>
+            <option>Rang Rasiya</option>
+            <option>The Shaukeens</option>
+            <option>ROAR: Tigers of the Sundarbans</option>
+            <option>A Decent Arrangement</option>
+            <option>Gollu aur Pappu</option>
+            <option>Titoo MBA</option>
+            <option>Kill Dil</option>
+            <option>Ungli</option>
+            <option>Happy Ending</option>
+            <option>Zed Plus</option>
+            <option>Zid</option>
+            <option>Action Jackson</option>
+            <option>Bhopal: A Prayer for Rain</option>
+            <option>Mumbai Delhi Mumbai</option>
+            <option>Badlapur Boys</option>
+            <option>Main Aur Mr. Riight</option>
+            <option>Ugly</option>
+            <option>PK</option>
+            <option>Dehraadun Diary</option>
+            <option>Matru ki Bijlee ka Mandola</option>
+            <option>Sulemani Keeda</option>
+            <option>Inkaar</option>
+            <option>Gangoobai</option>
+            <option>Akaash Vani</option>
+            <option>Main Krishna Hoon</option>
+            <option>Race 2</option>
+            <option>Bandook</option>
+            <option>Listen... Amaya</option>
+            <option>Special Chabbis</option>
+            <option>Murder 3</option>
+            <option>Zila Ghaziabad</option>
+            <option>Kai po che!</option>
+            <option>Bloody Isshq</option>
+            <option>Saare Jahaan Se Mehnga...</option>
+            <option>3G - A Killer Connection</option>
+            <option>Mere Dad Ki Maruti</option>
+            <option>Jolly LLB</option>
+            <option>Saheb Biwi Aur Gangster Returns</option>
+            <option>Mai</option>
+            <option>Vishwaroopam</option>
+            <option>Rangrezz</option>
+            <option>Aashiqui 2</option>
+            <option>Ek Thi Daayan</option>
+            <option>Himmatwala</option>
+            <option>Nautanki Saala!</option>
+            <option>Jayantabhai Ki Luv Story</option>
+            <option>Commando</option>
+            <option>Bombay Talkies</option>
+            <option>Go Goa Gone</option>
+            <option>Gippi</option>
+            <option>Aurangzeb</option>
+            <option>Ishkq in Paris</option>
+            <option>Zindagi 50 50</option>
+            <option>Yeh Jawaani Hai Deewani</option>
+            <option>Fukrey</option>
+            <option>Chhota Bheem and the Throne of Bali</option>
+            <option>Raanjhanaa</option>
+            <option>Ankur Arora Murder Case</option>
+            <option>Shortcut Romeo</option>
+            <option>Ghanchakkar</option>
+            <option>Hum Hai Raahi CAR Ke</option>
+            <option>Policegiri</option>
+            <option>Bhaag Milkha Bhaag</option>
+            <option>Sixteen</option>
+            <option>B.A. Pass</option>
+            <option>Enemmy</option>
+            <option>Issaq</option>
+            <option>Bajatey Raho</option>
+            <option>Luv U Soniyo</option>
+            <option>Nasha</option>
+            <option>Chor Chor Super Chor</option>
+            <option>Calapor</option>
+            <option>D-Day</option>
+            <option>Siddharth</option>
+            <option>Once Upon a Time in Mumbai Dobaara!</option>
+            <option>Madras Cafe</option>
+            <option>Satyagraha</option>
+            <option>Shuddh Desi Romance</option>
+            <option>Ramaiya Vastavaiya</option>
+            <option>Chennai Express</option>
+            <option>Grand Masti</option>
+            <option>John Day</option>
+            <option>Horror Story</option>
+            <option>Phata Poster Nikhla Hero</option>
+            <option>Ship of Theseus</option>
+            <option>Dabba</option>
+            <option>Baat Bann Gayi</option>
+            <option>Boss</option>
+            <option>Shahid</option>
+            <option>Mickey Virus</option>
+            <option>Satya 2</option>
+            <option>Rajjo</option>
+            <option>Maazii</option>
+            <option>Sooper Se Ooper</option>
+            <option>Prague</option>
+            <option>Wake Up India</option>
+            <option>Super Model</option>
+            <option>Gori Tere Pyaar Mein!</option>
+            <option>What the Fish</option>
+            <option>Jackpot</option>
+            <option>Table No.21</option>
+            <option>Bullett Raja</option>
+            <option>Dhoom:3</option>
+            <option>Chashme Baddoor</option>
+            <option>Lootera</option>
+            <option>War Chod Na Yaar</option>
+            <option>Chaalis Chauraasi</option>
+            <option>Ghost</option>
+            <option>Sadda Adda</option>
+            <option>Singh Saab the Great</option>
+            <option>Goliyon Ki Rasleela Ram-Leela</option>
+            <option>Agneepath</option>
+            <option>Ek Main Aur Ekk Tu</option>
+            <option>Ekk Deewana Tha</option>
+            <option>?: A Question Mark</option>
+            <option>Jodi Breakers</option>
+            <option>Tere Naal Love Ho Gaya</option>
+            <option>Staying Alive</option>
+            <option>Paan Singh Tomar</option>
+            <option>Kahaani</option>
+            <option>Zindagi Tere Naam</option>
+            <option>Agent Vinod</option>
+            <option>Blood Money</option>
+            <option>Bumboo</option>
+            <option>Valentine's Night</option>
+            <option>Married 2 America</option>
+            <option>Chaar Din Ki Chandni</option>
+            <option>Bittoo Boss</option>
+            <option>Vicky Donor</option>
+            <option>Hate Story</option>
+            <option>Tezz</option>
+            <option>Dangerous Ishhq</option>
+            <option>Ishaqzaade</option>
+            <option>Department</option>
+            <option>Fatso!</option>
+            <option>Arjun: The Warrior Prince</option>
+            <option>Life Ki Toh Lag Gayi</option>
+            <option>Shanghai</option>
+            <option>Ferrari Ki Sawaari</option>
+            <option>Teri Meri Kahaani</option>
+            <option>Mr Bhatti on Chutti</option>
+            <option>Yeh Khula Aasmaan</option>
+            <option>Rakhtbeej</option>
+            <option>Gangs of Wasseypur</option>
+            <option>Cocktail</option>
+            <option>Gattu</option>
+            <option>Kyaa Super Kool Hain Hum</option>
+            <option>Maximum</option>
+            <option>5 Ghantey Mien 5 Crore</option>
+            <option>Ek Tha Tiger</option>
+            <option>Challo Driver</option>
+            <option>Shirin Farhad Ki Toh Nikal Padi</option>
+            <option>Joker</option>
+            <option>Aalaap</option>
+            <option>Mere Dost Picture Abhi Baaki Hai</option>
+            <option>Krishna Aur Kans</option>
+            <option>From Sydney with Love</option>
+            <option>Jalpari: The Desert Mermaid</option>
+            <option>Barfi!</option>
+            <option>Heroine</option>
+            <option>Chal Pichchur Banate Hain</option>
+            <option>Kismet Love Paisa Dilli</option>
+            <option>Jeena Hai Toh Thok Daal</option>
+            <option>OMG: Oh My God!</option>
+            <option>Aiyyaa</option>
+            <option>Chittagong</option>
+            <option>Bhoot Returns</option>
+            <option>Delhi Safari</option>
+            <option>Chakravyuh</option>
+            <option>Student of the Year</option>
+            <option>Ajab Gazabb Love</option>
+            <option>Rush</option>
+            <option>1920: Evil Returns</option>
+            <option>Sons of Ram</option>
+            <option>Ata Pata Lapatta</option>
+            <option>Jab Tak Hai Jaan</option>
+            <option>Talaash</option>
+            <option>Login</option>
+            <option>Son of Sardaar</option>
+            <option>Cigarette Ki Tarah</option>
+            <option>Dabangg 2</option>
+            <option>Players</option>
+            <option>Housefull 2</option>
+            <option>Bol Bachchan</option>
+            <option>English Vinglish</option>
+            <option>Impatient Vivek</option>
+            <option>Yamla Pagla Deewana</option>
+            <option>Mumbai Mast Kallander</option>
+            <option>Dhobi Ghat</option>
+            <option>Turning 30!!!</option>
+            <option>Hostel</option>
+            <option>Dil Toh Baccha Hai Ji</option>
+            <option>United Six</option>
+            <option>Utt Pataang</option>
+            <option>Patiala House</option>
+            <option>7 Khoon Maaf</option>
+            <option>Tanu Weds Manu</option>
+            <option>F.A.L.T.U</option>
+            <option>Memories in March</option>
+            <option>Thank You</option>
+            <option>Angel</option>
+            <option>Happy Husbands</option>
+            <option>Teen Thay Bhai</option>
+            <option>Dum Maaro Dum</option>
+            <option>Shor in the City</option>
+            <option>Zokkomon</option>
+            <option>Chalo Dilli</option>
+            <option>Aashiqui.in</option>
+            <option>Satrangee Parachute</option>
+            <option>Monica</option>
+            <option>I Am</option>
+            <option>Naughty @ 40</option>
+            <option>Haunted - 3D</option>
+            <option>Love U... Mr. Kalakaar!</option>
+            <option>Ragini MMS</option>
+            <option>Stanley Ka Dabba</option>
+            <option>Shagird</option>
+            <option>404: Error Not Found</option>
+            <option>Shaitan</option>
+            <option>Pyaar Ka Punchnama</option>
+            <option>Bheja Fry 2</option>
+            <option>Always Kabhi Kabhi</option>
+            <option>Double Dhamaal</option>
+            <option>Bbuddah... Hoga Terra Baap</option>
+            <option>Delhi Belly</option>
+            <option>Murder 2</option>
+            <option>Chillar Party</option>
+            <option>Zindagi Na Milegi Dobara</option>
+            <option>Gandhi to Hitler</option>
+            <option>I Am Kalam</option>
+            <option>Bin Bulaye Baraati</option>
+            <option>Kucch Luv Jaisaa</option>
+            <option>Singham</option>
+            <option>Khap</option>
+            <option>Bubble Gum</option>
+            <option>Shabri</option>
+            <option>Phhir</option>
+            <option>Aarakshan</option>
+            <option>Chatur Singh Two Star</option>
+            <option>Sahi Dhandhe Galat Bande</option>
+            <option>Bodyguard</option>
+            <option>Yeh Dooriyan</option>
+            <option>Not a Love Story</option>
+            <option>Hum Tum Shabana</option>
+            <option>Mummy Punjabi: Superman Ki Bhi Maa!!</option>
+            <option>Mere Brother Ki Dulhan</option>
+            <option>Mausam</option>
+            <option>U R My Jaan</option>
+            <option>Force</option>
+            <option>Saheb Biwi Aur Gangster</option>
+            <option>Tere Mere Phere</option>
+            <option>Breakaway</option>
+            <option>Chargesheet</option>
+            <option>Love Breakups Zindagi</option>
+            <option>Mujhse Fraaandship Karoge</option>
+            <option>Aazaan</option>
+            <option>Ra.One</option>
+            <option>Rockstar</option>
+            <option>Miley - Naa Miley - Hum</option>
+            <option>Tell Me O Kkhuda</option>
+            <option>Damadamm!</option>
+            <option>Ladies vs. Ricky Bahl</option>
+            <option>Desi Boyz</option>
+            <option>Game</option>
+            <option>No One Killed Jessica</option>
+            <option>Rascals</option>
+            <option>The Dirty Picture</option>
+            <option>Pyaar Impossible!</option>
+            <option>Chance Pe Dance</option>
+            <option>My Friend Pinto</option>
+            <option>Veer</option>
+            <option>Striker</option>
+            <option>Rann</option>
+            <option>Ishqiya</option>
+            <option>Road to Sangam</option>
+            <option>Jo Hum Chahein</option>
+            <option>Click</option>
+            <option>Toh Baat Pakki!</option>
+            <option>My Name Is Khan</option>
+            <option>Teen Patti</option>
+            <option>Karthik Calling Karthik</option>
+            <option>Don 2</option>
+            <option>Rokkk</option>
+            <option>Aakhari Decision</option>
+            <option>Right Yaaa Wrong</option>
+            <option>Sukhmani</option>
+            <option>Thanks Maa</option>
+            <option>Na Ghar Ke Na Ghaat Ke</option>
+            <option>Trump Card</option>
+            <option>Shaapit: The Cursed</option>
+            <option>Hum Tum Aur Ghost</option>
+            <option>Well Done Abba!</option>
+            <option>Tum Milo Toh Sahi</option>
+            <option>Jaane Kahan Se Aayi Hai</option>
+            <option>Prem Kaa Game</option>
+            <option>Sadiyaan: Boundaries Divide... Love Unites</option>
+            <option>The Japanese Wife</option>
+            <option>Get Educated: Paathshaala</option>
+            <option>Phoonk 2</option>
+            <option>Lahore</option>
+            <option>Apartment: Rent at Your Own Risk</option>
+            <option>City of Gold - Mumbai 1982: Ek Ankahee Kahani</option>
+            <option>Chase</option>
+            <option>Housefull</option>
+            <option>Mittal v/s Mittal</option>
+            <option>It's a Wonderful Afterlife</option>
+            <option>Prince</option>
+            <option>Raavan</option>
+            <option>Bumm Bumm Bole</option>
+            <option>Kushti</option>
+            <option>Kites</option>
+            <option>LSD: Love Sex Aur Dhokha</option>
+            <option>Milenge Milenge</option>
+            <option>Ek Second... Jo Zindagi Badal De...</option>
+            <option>Mr. Singh/Mrs. Mehta</option>
+            <option>Lamhaa: The Untold Story of Kashmir</option>
+            <option>Khatta Meetha</option>
+            <option>Tere Bin Laden</option>
+            <option>Udaan</option>
+            <option>Once Upon a Time in Mumbaai</option>
+            <option>Help</option>
+            <option>Peepli (Live)</option>
+            <option>Lafangey Parindey</option>
+            <option>Hello Darling</option>
+            <option>Antardwand</option>
+            <option>Aashayein</option>
+            <option>Soch Lo</option>
+            <option>Dabangg</option>
+            <option>Khichdi: The Movie</option>
+            <option>Red Alert: The War Within</option>
+            <option>Life Express</option>
+            <option>The Film Emotional Atyachar</option>
+            <option>Hisss</option>
+            <option>Crook: It's Good to Be Bad</option>
+            <option>Do Dooni Chaar</option>
+            <option>Aakrosh</option>
+            <option>Ramayana: The Epic</option>
+            <option>Knock Out</option>
+            <option>Jhootha Hi Sahi</option>
+            <option>Guzaarish</option>
+            <option>Allah Ke Banday</option>
+            <option>Break Ke Baad</option>
+            <option>Khuda Kasam</option>
+            <option>Phas Gaye Re Obama</option>
+            <option>Malik Ek</option>
+            <option>A Flat</option>
+            <option>No Problem</option>
+            <option>Band Baaja Baaraat</option>
+            <option>Kaalo</option>
+            <option>Mirch</option>
+            <option>Tees Maar Khan</option>
+            <option>Isi Life Mein...!</option>
+            <option>Toonpur Ka Superrhero</option>
+            <option>Tera Kya Hoga Johnny</option>
+            <option>Ramaa: The Saviour</option>
+            <option>I Hate Luv Storys</option>
+            <option>Dulha Mil Gaya</option>
+            <option>Anjaana Anjaani</option>
+            <option>Dunno Y Na Jaane Kyun...</option>
+            <option>Pankh</option>
+            <option>Action Replayy</option>
+            <option>3 Idiots</option>
+            <option>Luck by Chance</option>
+            <option>Love Aaj Kal</option>
+            <option>Wanted</option>
+            <option>Delhi-6</option>
+            <option>Raaz: The Mystery Continues</option>
+            <option>Aasma: The Sky Is the Limit</option>
+            <option>Ajab Prem Ki Ghazab Kahani</option>
+            <option>Chal Chala Chal</option>
+            <option>Billu</option>
+            <option>The Stoneman Murders</option>
+            <option>Kisse Pyaar Karoon?</option>
+            <option>Dhoondte Reh Jaoge</option>
+            <option>Karma Confessions and Holi</option>
+            <option>Victory</option>
+            <option>Kaminey</option>
+            <option>Jai Veeru: Friends Forever</option>
+            <option>Little Zizou</option>
+            <option>Gulaal</option>
+            <option>Aloo Chaat</option>
+            <option>Barah Aana</option>
+            <option>Firaaq</option>
+            <option>Aa Dekhen Zara</option>
+            <option>99</option>
+            <option>Ek: The Power of One</option>
+            <option>Ek Se Bure Do</option>
+            <option>Sikandar</option>
+            <option>Zor Lagaa Ke... Haiya!</option>
+            <option>Paying Guests</option>
+            <option>New York</option>
+            <option>Sankat City</option>
+            <option>Shortkut - The Con Is On</option>
+            <option>Luck</option>
+            <option>Life Partner</option>
+            <option>Daddy Cool: Join the Fun</option>
+            <option>Kisaan</option>
+            <option>Y.M.I. Yeh Mera India</option>
+            <option>Aagey Se Right</option>
+            <option>Chintu Ji</option>
+            <option>Quick Gun Murugun: Misadventures of an Indian Cowboy</option>
+            <option>Fox</option>
+            <option>Baabarr</option>
+            <option>Phir Kabhi</option>
+            <option>Vaada Raha... I Promise</option>
+            <option>Dil Bole Hadippa!</option>
+            <option>What's Your Raashee?</option>
+            <option>Acid Factory</option>
+            <option>All the Best: Fun Begins</option>
+            <option>Wake Up Sid</option>
+            <option>Main Aurr Mrs Khanna</option>
+            <option>Blue</option>
+            <option>Fruit & Nut</option>
+            <option>Aladin</option>
+            <option>London Dreams</option>
+            <option>Jail</option>
+            <option>Tum Mile</option>
+            <option>Kurbaan</option>
+            <option>De Dana Dan</option>
+            <option>Paa</option>
+            <option>Rocket Singh: Salesman of the Year</option>
+            <option>Raat Gayi Baat Gayi?</option>
+            <option>Accident on Hill Road</option>
+            <option>Chandni Chowk to China</option>
+            <option>Dostana</option>
+            <option>Race</option>
+            <option>Rab Ne Bana Di Jodi</option>
+            <option>Ghajini</option>
+            <option>Singh Is Kinng</option>
+            <option>Golmaal Returns</option>
+            <option>Jodhaa Akbar</option>
+            <option>Bachna Ae Haseeno</option>
+            <option>Bhoothnath</option>
+            <option>Sarkar Raj</option>
+            <option>Halla Bol</option>
+            <option>Humne Jeena Seekh Liya</option>
+            <option>Bombay to Bangkok</option>
+            <option>Tulsi: Mathrudevobhava</option>
+            <option>Sunday</option>
+            <option>One Two Three</option>
+            <option>Krazzy 4</option>
+            <option>U Me Aur Hum</option>
+            <option>Sirf....: Life Looks Greener on the Other Side</option>
+            <option>Tashan</option>
+            <option>Anamika: The Untold Story</option>
+            <option>Jimmy</option>
+            <option>Jannat: In Search of Heaven...</option>
+            <option>Don Muthu Swami</option>
+            <option>Woodstock Villa</option>
+            <option>Mere Baap Pehle Aap</option>
+            <option>Summer 2007</option>
+            <option>De Taali</option>
+            <option>Haal-e-Dil</option>
+            <option>Thodi Life Thoda Magic</option>
+            <option>Thoda Pyaar Thoda Magic</option>
+            <option>Via Darjeeling</option>
+            <option>Kismat Konnection</option>
+            <option>Love Story 2050</option>
+            <option>Contract</option>
+            <option>Mission Istaanbul: Darr Ke Aagey Jeet Hai!</option>
+            <option>Money Hai Toh Honey Hai</option>
+            <option>God Tussi Great Ho</option>
+            <option>Mumbai Meri Jaan</option>
+            <option>Maan Gaye Mughall-E-Azam</option>
+            <option>Rock On!!</option>
+            <option>C Kkompany</option>
+            <option>Chamku</option>
+            <option>Mukhbiir</option>
+            <option>Tahaan</option>
+            <option>1920</option>
+            <option>The Last Lear</option>
+            <option>Welcome to Sajjanpur</option>
+            <option>Saas Bahu Aur Sensex</option>
+            <option>Hari Puttar: A Comedy of Terrors</option>
+            <option>Drona</option>
+            <option>Hello</option>
+            <option>Karzzzz</option>
+            <option>Heroes</option>
+            <option>Roadside Romeo</option>
+            <option>Ek Vivaah... Aisa Bhi</option>
+            <option>Desh Drohi</option>
+            <option>Fashion</option>
+            <option>Dasvidaniya</option>
+            <option>Yuvvraaj</option>
+            <option>Oye Lucky! Lucky Oye!</option>
+            <option>Oh My God!!</option>
+            <option>Sorry Bhai!</option>
+            <option>1971</option>
+            <option>Meerabai Not Out</option>
+            <option>Wafaa</option>
+            <option>Gumnaam: The Mystery</option>
+            <option>Dil Kabaddi</option>
+            <option>Ram Gopal Varma Ki Aag</option>
+            <option>Aap Kaa Surroor: The Moviee - The Real Luv Story</option>
+            <option>Aggar: Passion Betrayal Terror</option>
+            <option>Anwar</option>
+            <option>Aaja Nachle</option>
+            <option>Apne</option>
+            <option>Awarapan</option>
+            <option>Bheja Fry</option>
+            <option>Bhool Bhulaiyaa</option>
+            <option>Bhram: An Illusion</option>
+            <option>Big Brother</option>
+            <option>68 Pages</option>
+            <option>Aur Pappu Pass Ho Gaya</option>
+            <option>Apna Asmaan</option>
+            <option>Black Friday</option>
+            <option>The Blue Umbrella</option>
+            <option>Blood Brothers</option>
+            <option>Buddha Mar Gaya</option>
+            <option>Cash</option>
+            <option>Cheeni Kum</option>
+            <option>Chhodon Naa Yaar</option>
+            <option>Darling</option>
+            <option>Chak De! India</option>
+            <option>Dhamaal</option>
+            <option>Dhan Dhana Dhan Goal</option>
+            <option>Dharm</option>
+            <option>Journey Bombay to Goa: Laughter Unlimited</option>
+            <option>Dhokha</option>
+            <option>Dil Dosti Etc</option>
+            <option>Dhol</option>
+            <option>Ek Chalis Ki Last Local</option>
+            <option>Familywala</option>
+            <option>Gandhi My Father</option>
+            <option>Don't Stop Dreaming</option>
+            <option>Dus Kahaniyaan</option>
+            <option>Eklavya</option>
+            <option>Go</option>
+            <option>Gauri: The Unborn</option>
+            <option>Heyy Babyy</option>
+            <option>Guru</option>
+            <option>Honeymoon Travels Pvt. Ltd.</option>
+            <option>Jahan Jaaeyega Hamen Paaeyega</option>
+            <option>Jhoom Barabar Jhoom</option>
+            <option>Jab We Met</option>
+            <option>Good Boy Bad Boy</option>
+            <option>Fool N Final</option>
+            <option>Khoya Khoya Chand</option>
+            <option>Johnny Gaddaar</option>
+            <option>Just Married: Marriage Was Only the Beginning!</option>
+            <option>Kya Love Story Hai</option>
+            <option>Kudiyon Ka Hai Zamaana</option>
+            <option>Hastey Hastey Follow Your Heart</option>
+            <option>Laaga Chunari Mein Daag: Journey of a Woman</option>
+            <option>Life in a Metro</option>
+            <option>Loins of Punjab Presents</option>
+            <option>Manorama Six Feet Under</option>
+            <option>Marigold</option>
+            <option>MP3: Mera Pehla Pehla Pyaar</option>
+            <option>Hattrick</option>
+            <option>Naqaab</option>
+            <option>Mumbai Salsa</option>
+            <option>The Namesake</option>
+            <option>Namastey London</option>
+            <option>My Bollywood Bride</option>
+            <option>Nehlle Pe Dehlla</option>
+            <option>Nishabd</option>
+            <option>No Smoking</option>
+            <option>Om Shanti Om</option>
+            <option>Partner</option>
+            <option>Raqeeb</option>
+            <option>Nanhe Jaisalmer: A Dream Come True</option>
+            <option>Life Mein Kabhie Kabhiee</option>
+            <option>Risk</option>
+            <option>Shakalaka Boom Boom</option>
+            <option>Red Swastik</option>
+            <option>Salaam-E-Ishq</option>
+            <option>Saawariya</option>
+            <option>Sarhad Paar</option>
+            <option>Say Salaam India: 'Let's Bring the Cup Home'</option>
+            <option>Red: The Dark Side</option>
+            <option>Shootout at Lokhandwala</option>
+            <option>Strangers</option>
+            <option>Swami</option>
+            <option>Taare Zameen Par</option>
+            <option>Ta Ra Rum Pum</option>
+            <option>Speed</option>
+            <option>Traffic Signal</option>
+            <option>The Train: Some Lines Should Never Be Crossed...</option>
+            <option>Showbiz</option>
+            <option>Sunglass</option>
+            <option>Welcome</option>
+            <option>36 China Town</option>
+            <option>Zamaanat</option>
+            <option>Aap Ki Khatir</option>
+            <option>Ahista Ahista</option>
+            <option>Aksar</option>
+            <option>Alag: He Is Different.... He Is Alone...</option>
+            <option>Anthony Kaun Hai?</option>
+            <option>Apna Sapna Money Money</option>
+            <option>Ankahee</option>
+            <option>Yatra</option>
+            <option>Baabul</option>
+            <option>Aisa Kyon Hota Hai?</option>
+            <option>Adharm</option>
+            <option>Being Cyrus</option>
+            <option>Banaras</option>
+            <option>Bas Ek Pal</option>
+            <option>Bhagam Bhag</option>
+            <option>Chingaari</option>
+            <option>Bhoot Unkle</option>
+            <option>Chand Ke Paar Chalo</option>
+            <option>Aryan: Unbreakable</option>
+            <option>Chup Chup Ke</option>
+            <option>Corporate</option>
+            <option>Darna Zaroori Hai</option>
+            <option>Deadline: Sirf 24 Ghante</option>
+            <option>Dil Diya Hai</option>
+            <option>Darwaza Bandh Rakho</option>
+            <option>Ei8ht Shani</option>
+            <option>Dhoom:2</option>
+            <option>Dor</option>
+            <option>Don</option>
+            <option>Family: Ties of Blood</option>
+            <option>Fanaa</option>
+            <option>Gangster</option>
+            <option>Golmaal: Fun Unlimited</option>
+            <option>Devaki</option>
+            <option>Fight Club: Members Only</option>
+            <option>Dharti Kahe Pukar Ke</option>
+            <option>Humko Deewana Kar Gaye</option>
+            <option>Humko Tumse Pyaar Hai</option>
+            <option>I See You</option>
+            <option>Jaane Hoga Kya</option>
+            <option>Jaan-E-Mann: Let's Fall in Love... Again</option>
+            <option>Jawani Diwani: A Youthful Joyride</option>
+            <option>Holiday</option>
+            <option>Iqraar: By Chance</option>
+            <option>Khosla Ka Ghosla!</option>
+            <option>Kabhi Alvida Naa Kehna</option>
+            <option>Love Ke Chakkar Mein</option>
+            <option>Lage Raho Munna Bhai</option>
+            <option>Kabul Express</option>
+            <option>Jigyaasa</option>
+            <option>Krrish</option>
+            <option>Malamaal Weekly</option>
+            <option>Omkara</option>
+            <option>Pyaar Ke Side Effects</option>
+            <option>Naksha</option>
+            <option>Phir Hera Pheri</option>
+            <option>Pyare Mohan</option>
+            <option>Mere Jeevan Saathi</option>
+            <option>Prateeksha</option>
+            <option>Sacred Evil</option>
+            <option>Rang De Basanti</option>
+            <option>Shaadi Karke Phas Gaya Yaar</option>
+            <option>Sandwich</option>
+            <option>Shaadi Se Pehle</option>
+            <option>Saawan... The Love Season</option>
+            <option>Shiva</option>
+            <option>Souten: The Other Woman</option>
+            <option>Shikhar</option>
+            <option>Bacheha-Ye aseman</option>
+            <option>Tathastu</option>
+            <option>The Killer</option>
+            <option>Umrao Jaan</option>
+            <option>Taxi No. 9 2 11: Nau Do Gyarah</option>
+            <option>Teesri Aankh: The Hidden Camera</option>
+            <option>Vivah</option>
+            <option>Utthaan</option>
+            <option>Waris Shah: Ishq Daa Waaris</option>
+            <option>Woh Lamhe</option>
+            <option>Yun Hota Toh Kya Hota</option>
+            <option>Umar</option>
+            <option>Zindaggi Rocks</option>
+            <option>Tom Dick and Harry</option>
+            <option>Aashiq Banaya Aapne: Love Takes Over</option>
+            <option>Anjaane: The Unkown</option>
+            <option>Apaharan</option>
+            <option>Bachke Rehna Re Baba</option>
+            <option>7 1/2 Phere: More Than a Wedding</option>
+            <option>A Sublime Love Story: Barsaat</option>
+            <option>Bewafaa</option>
+            <option>Black</option>
+            <option>Zinda</option>
+            <option>Bluffmaster!</option>
+            <option>99.9 FM</option>
+            <option>Bhola in Bollywood</option>
+            <option>Bhagmati</option>
+            <option>Blackmail</option>
+            <option>Bunty Aur Babli</option>
+            <option>Chaahat Ek Nasha...</option>
+            <option>Chetna: The Excitement</option>
+            <option>Chand Sa Roshan Chehra</option>
+            <option>Chocolate: Deep Dark Secrets</option>
+            <option>D'</option>
+            <option>Deewane Huye Paagal</option>
+            <option>Bullet: Ek Dhamaka</option>
+            <option>Chehraa</option>
+            <option>Dil Jo Bhi Kahey...</option>
+            <option>Dosti: Friends Forever</option>
+            <option>Classic Dance of Love</option>
+            <option>Dus</option>
+            <option>Elaan</option>
+            <option>Fareb</option>
+            <option>Ek Ajnabee</option>
+            <option>Fun: Can Be Dangerous Sometimes</option>
+            <option>Ek Khiladi Ek Haseena</option>
+            <option>Double Cross: Ek Dhoka</option>
+            <option>Ahlaam</option>
+            <option>Home Delivery: Aapko... Ghar Tak</option>
+            <option>Garam Masala</option>
+            <option>Iqbal</option>
+            <option>Jai Chiranjeeva</option>
+            <option>Hazaaron Khwaishein Aisi</option>
+            <option>Insan</option>
+            <option>Jo Bole So Nihaal</option>
+            <option>Karam</option>
+            <option>Kaal</option>
+            <option>Kalyug</option>
+            <option>Kasak</option>
+            <option>Hanuman</option>
+            <option>James</option>
+            <option>Kisna: The Warrior Poet</option>
+            <option>Koi Aap Sa: But Lovers Have to Be Friends</option>
+            <option>Khamoshh... Khauff Ki Raat</option>
+            <option>Jurm</option>
+            <option>Kuchh Meetha Ho Jaye</option>
+            <option>Kyaa Kool Hai Hum</option>
+            <option>Lucky: No Time for Love</option>
+            <option>Main Aisa Hi Hoon</option>
+            <option>Kyon Ki...</option>
+            <option>Main Meri Patni... Aur Woh!</option>
+            <option>Maine Gandhi Ko Nahin Mara</option>
+            <option>Maine Pyaar Kyun Kiya</option>
+            <option>Mangal Pandey: The Rising</option>
+            <option>Koi Mere Dil Mein Hai</option>
+            <option>Mr Prime Minister</option>
+            <option>My Brother... Nikhil</option>
+            <option>My Wife's Murder</option>
+            <option>Naina</option>
+            <option>Neal 'N' Nikki</option>
+            <option>No Entry</option>
+            <option>Padmashree Laloo Prasad Yadav</option>
+            <option>Page 3</option>
+            <option>Morning Raga</option>
+            <option>Parineeta</option>
+            <option>Pehchaan: The Face of Truth</option>
+            <option>Paheli</option>
+            <option>Rog</option>
+            <option>Pyaar Mein Twist</option>
+            <option>Salaam Namaste</option>
+            <option>Revati</option>
+            <option>Sarkar</option>
+            <option>Sehar</option>
+            <option>Shabd</option>
+            <option>Shabnam Mausi</option>
+            <option>Sheesha</option>
+            <option>Ramji Londonwaley</option>
+            <option>Silsiilay</option>
+            <option>Socha Na Tha</option>
+            <option>Taj Mahal: An Eternal Love Story</option>
+            <option>Tango Charlie</option>
+            <option>The Film</option>
+            <option>Vaada</option>
+            <option>Vaah! Life Ho Toh Aisi!</option>
+            <option>Ssukh</option>
+            <option>Shaadi No. 1</option>
+            <option>Viruddh... Family Comes First</option>
+            <option>Waqt: The Race Against Time</option>
+            <option>Vidhyaarthi: The Power of Students</option>
+            <option>Yakeen</option>
+            <option>Zeher</option>
+            <option>Veer-Zaara</option>
+            <option>Main Hoon Na</option>
+            <option>Zameer</option>
+            <option>Mujhse Shaadi Karogi</option>
+            <option>Dhoom</option>
+            <option>Khakee</option>
+            <option>Hum Tum</option>
+            <option>Hulchul</option>
+            <option>Murder</option>
+            <option>Yuva</option>
+            <option>Aitraaz</option>
+            <option>Aetbaar</option>
+            <option>Ab Tumhare Hawale Watan Saathiyo</option>
+            <option>Aan: Men at Work</option>
+            <option>Bardaasht</option>
+            <option>Chameli</option>
+            <option>Agni Pankh</option>
+            <option>Asambhav</option>
+            <option>Charas: A Joint Effort</option>
+            <option>Deewaar: Let's Bring Our Heroes Home</option>
+            <option>Dev</option>
+            <option>Dil Maange More!!!</option>
+            <option>Dil Ne Jise Apna Kaha</option>
+            <option>Dobara</option>
+            <option>Aabra Ka Daabra</option>
+            <option>Dil Bechara Pyaar Ka Maara</option>
+            <option>Gayab</option>
+            <option>Fida</option>
+            <option>Garv: Pride and Honour</option>
+            <option>Ek Se Badhkar Ek</option>
+            <option>Ek Hasina Thi</option>
+            <option>Girlfriend</option>
+            <option>Hatya: The Murder</option>
+            <option>Hava Aney Dey</option>
+            <option>Hawas</option>
+            <option>Hyderabad Blues 2</option>
+            <option>Julie</option>
+            <option>Kaun Hai Jo Sapno Mein Aaya</option>
+            <option>Inteqam: The Perfect Game</option>
+            <option>Kis Kis Ki Kismat</option>
+            <option>Insaaf: The Justice</option>
+            <option>I Proud to Be an Indian</option>
+            <option>Khamosh Pani: Silent Waters</option>
+            <option>Kismat</option>
+            <option>Lakeer - Forbidden Lines</option>
+            <option>Krishna Cottage</option>
+            <option>Kyun! Ho Gaya Na...</option>
+            <option>Madhoshi</option>
+            <option>Lakshya</option>
+            <option>Ishq Hai Tumse</option>
+            <option>Maqbool</option>
+            <option>Masti</option>
+            <option>Meenaxi: Tale of 3 Cities</option>
+            <option>Musafir</option>
+            <option>Mughal-E-Azam</option>
+            <option>Muskaan</option>
+            <option>Meri Biwi Ka Jawab Nahin</option>
+            <option>Naach</option>
+            <option>Netaji Subhas Chandra Bose: The Forgotten Hero</option>
+            <option>Paap</option>
+            <option>Phir Milenge</option>
+            <option>Plan</option>
+            <option>Police Force: An Inside Story</option>
+            <option>Paisa Vasool</option>
+            <option>Popcorn Khao! Mast Ho Jao</option>
+            <option>Rakht</option>
+            <option>Raincoat</option>
+            <option>Rudraksh</option>
+            <option>Shaadi Ka Laddoo</option>
+            <option>Run</option>
+            <option>Rok Sako To Rok Lo</option>
+            <option>Suno Sasurjee</option>
+            <option>Swades: We the People</option>
+            <option>Taarzan: The Wonder Car</option>
+            <option>Nothing But Life</option>
+            <option>Shart: The Challenge</option>
+            <option>Tumsa Nahin Dekha</option>
+            <option>Vaastu Shastra</option>
+            <option>Yeh Lamhe Judaai Ke</option>
+            <option>Sheen</option>
+            <option>Where's the Party Yaar?</option>
+            <option>Thoda Tum Badlo Thoda Hum</option>
+            <option>Koi... Mil Gaya</option>
+            <option>Kal Ho Naa Ho</option>
+            <option>Shukriya: Till Death Do Us Apart</option>
+            <option>Chalte Chalte</option>
+            <option>The Hero: Love Story of a Spy</option>
+            <option>Baghban</option>
+            <option>Main Prem Ki Diwani Hoon</option>
+            <option>LOC: Kargil</option>
+            <option>Munna Bhai M.B.B.S.</option>
+            <option>Qayamat: City Under Threat</option>
+            <option>88 Antop Hill</option>
+            <option>3 Deewarein</option>
+            <option>Aanch</option>
+            <option>Aapko Pehle Bhi Kahin Dekha Hai</option>
+            <option>Bhoot</option>
+            <option>Boom</option>
+            <option>Aaj Ka Andha Kanoon</option>
+            <option>Andaaz</option>
+            <option>Armaan</option>
+            <option>Chori Chori</option>
+            <option>Calcutta Mail</option>
+            <option>Baaz: A Bird in Danger</option>
+            <option>Basti</option>
+            <option>Chota Jadugar</option>
+            <option>Dil Ka Rishta</option>
+            <option>Darna Mana Hai</option>
+            <option>Dhoop</option>
+            <option>Dhund: The Fog</option>
+            <option>Chura Liyaa Hai Tumne</option>
+            <option>The Bypass</option>
+            <option>Dum</option>
+            <option>Dil Pardesi Ho Gayaa</option>
+            <option>Ek Alag Mausam</option>
+            <option>Footpath</option>
+            <option>Escape from Taliban</option>
+            <option>Ek Din 24 Ghante</option>
+            <option>Gangaajal</option>
+            <option>Hawa</option>
+            <option>Haasil</option>
+            <option>Ek Aur Ek Gyarah: By Hook or by Crook</option>
+            <option>Hungama</option>
+            <option>Green Card Fever</option>
+            <option>Flavors</option>
+            <option>Indian Babu</option>
+            <option>Fun2shh... Dudes in the 10th Century</option>
+            <option>Inteha</option>
+            <option>Jaal: The Trap</option>
+            <option>Ishq Vishk</option>
+            <option>Hawayein</option>
+            <option>Jajantaram Mamantaram</option>
+            <option>Jism</option>
+            <option>Jhankaar Beats</option>
+            <option>Kagaar: Life on the Edge</option>
+            <option>Kash... Aap Hamare Hote</option>
+            <option>Khel</option>
+            <option>Janasheen</option>
+            <option>Kaise Kahoon Ke... Pyaar Hai</option>
+            <option>Khushi</option>
+            <option>Khwahish</option>
+            <option>Kucch To Hai</option>
+            <option>Kuch Naa Kaho</option>
+            <option>Main Madhuri Dixit Banna Chahti Hoon!</option>
+            <option>Joggers' Park</option>
+            <option>Market</option>
+            <option>Om</option>
+            <option>Out of Control</option>
+            <option>Mumbai Matinee</option>
+            <option>Matrubhoomi: A Nation Without Women</option>
+            <option>Parwana</option>
+            <option>Pinjar: Beyond Boundaries...</option>
+            <option>Mumbai Se Aaya Mera Dost</option>
+            <option>Saaya</option>
+            <option>Samay: When Time Strikes</option>
+            <option>Nayee Padosan</option>
+            <option>Satta</option>
+            <option>Sssshhh...</option>
+            <option>Pran Jaaye Par Shaan Na Jaaye</option>
+            <option>Raghu Romeo</option>
+            <option>Stumped</option>
+            <option>Rules: Pyaar Ka Superhit Formula</option>
+            <option>Right Here Right Now</option>
+            <option>Raja Bhaiya</option>
+            <option>Tere Naam</option>
+            <option>Tujhe Meri Kasam</option>
+            <option>Talaash: The Hunt Begins...</option>
+            <option>Tehzeeb</option>
+            <option>Gulabi Aaina</option>
+            <option>Yeh Dil</option>
+            <option>Xcuse Me</option>
+            <option>Raaz</option>
+            <option>Zameen</option>
+            <option>Waisa Bhi Hota Hai Part II</option>
+            <option>Devdas</option>
+            <option>Kaante</option>
+            <option>Hum Tumhare Hain Sanam</option>
+            <option>Aankhen</option>
+            <option>Saathiya</option>
+            <option>Company</option>
+            <option>Awara Paagal Deewana</option>
+            <option>Humraaz</option>
+            <option>16 December</option>
+            <option>23rd March 1931: Shaheed</option>
+            <option>Agni Varsha</option>
+            <option>Ab Ke Baras</option>
+            <option>Aap Mujhe Achche Lagne Lage</option>
+            <option>Annarth</option>
+            <option>Ansh: The Deadly Part</option>
+            <option>Mujhse Dosti Karoge!</option>
+            <option>Bollywood Queen</option>
+            <option>Badhaai Ho Badhaai</option>
+            <option>Chor Machaaye Shor</option>
+            <option>Chalo Ishq Ladaaye</option>
+            <option>Akhiyon Se Goli Maare</option>
+            <option>Bomb the System</option>
+            <option>Baaja</option>
+            <option>Be-Lagaam</option>
+            <option>Deewangee</option>
+            <option>Dil Vil Pyar Vyar</option>
+            <option>Dil Hai Tumhaara</option>
+            <option>Ek Chhotisi Love Story</option>
+            <option>Encounter: The Killing</option>
+            <option>Filhaal...</option>
+            <option>Ghaav: The Wound</option>
+            <option>Gunaah</option>
+            <option>Haan Maine Bhi Pyaar Kiya</option>
+            <option>Hum Kisi Se Kum Nahin</option>
+            <option>Hum Pyar Tumhi Se Kar Baithe</option>
+            <option>Jaani Dushman: Ek Anokhi Kahani</option>
+            <option>Jeena Sirf Merre Liye</option>
+            <option>Karz: The Burden of Truth</option>
+            <option>Kabhie Tum Kabhie Hum</option>
+            <option>Kehtaa Hai Dil Baar Baar</option>
+            <option>Koi Mere Dil Se Poochhe</option>
+            <option>Kranti</option>
+            <option>Kuch Tum Kaho Kuch Hum Kahein</option>
+            <option>Kya Yehi Pyaar Hai</option>
+            <option>Kyaa Dil Ne Kahaa</option>
+            <option>Kitne Door... Kitne Paas</option>
+            <option>Maa Tujhhe Salaam</option>
+            <option>Maine Dil Tujhko Diya</option>
+            <option>Makdee</option>
+            <option>Hathyar: Face to Face with Reality</option>
+            <option>Maseeha</option>
+            <option>Mere Yaar Ki Shaadi Hai</option>
+            <option>Mitr: My Friend</option>
+            <option>Na Tum Jaano Na Hum</option>
+            <option>Pitaah</option>
+            <option>Om Jai Jagadish</option>
+            <option>Nishad</option>
+            <option>Pyaar Diwana Hota Hai</option>
+            <option>Pyaasa</option>
+            <option>Shaheed-E-Azam</option>
+            <option>Road</option>
+            <option>Shakthi: The Power</option>
+            <option>Shararat</option>
+            <option>The Legend of Bhagat Singh</option>
+            <option>Tumko Na Bhool Paayenge</option>
+            <option>Tum Se Achcha Kaun Hai</option>
+            <option>Waah! Tera Kya Kehna</option>
+            <option>Yeh Dil Aashiqanaa</option>
+            <option>Yeh Kaisi Mohabbat</option>
+            <option>Yeh Mohabbat Hai</option>
+            <option>Sur: The Melody of Life</option>
+            <option>Rishtey</option>
+            <option>Yeh Hai Jalwa</option>
+            <option>Zindagi Khoobsoorat Hai</option>
+            <option>Kabhi Khushi Kabhie Gham...</option>
+            <option>Yeh Kya Ho Raha Hai?</option>
+            <option>Lagaan: Once Upon a Time in India</option>
+            <option>Gadar: Ek Prem Katha</option>
+            <option>Indian</option>
+            <option>Dil Chahta Hai</option>
+            <option>Chori Chori Chupke Chupke</option>
+            <option>Yaadein...</option>
+            <option>Lajja</option>
+            <option>Aalavandhan</option>
+            <option>Aamdani Atthanni Kharcha Rupaiya</option>
+            <option>Aashiq</option>
+            <option>Aks</option>
+            <option>Ajnabee</option>
+            <option>Censor</option>
+            <option>Asoka</option>
+            <option>Albela</option>
+            <option>Bas Itna Sa Khwaab Hai...</option>
+            <option>Ek Rishtaa: The Bond of Love</option>
+            <option>Bhairav</option>
+            <option>Bengal Tiger</option>
+            <option>Chhupa Rustam: A Musical Thriller</option>
+            <option>Daman: A Victim of Marital Violence</option>
+            <option>Chandni Bar</option>
+            <option>Deewaanapan</option>
+            <option>Dil Ne Phir Yaad Kiya</option>
+            <option>Ehsaas: The Feeling</option>
+            <option>Farz</option>
+            <option>Grahan</option>
+            <option>Dattak</option>
+            <option>Jodi No.1</option>
+            <option>Hum Ho Gaye Aap Ke</option>
+            <option>Kasam</option>
+            <option>Kuch Khatti Kuch Meethi</option>
+            <option>Kasoor</option>
+            <option>Maya</option>
+            <option>Ittefaq</option>
+            <option>Mitti</option>
+            <option>Mujhe Meri Biwi Se Bachaao</option>
+            <option>Mujhe Kucch Kehna Hai</option>
+            <option>Hadh: Life on the Edge of Death</option>
+            <option>Nayak: The Real Hero</option>
+            <option>One 2 Ka 4</option>
+            <option>Kyo Kii... Main Jhuth Nahin Bolta</option>
+            <option>Love Ke Liye Kuch Bhi Karega</option>
+            <option>Pyaar Ishq Aur Mohabbat</option>
+            <option>Pyaar Tune Kya Kiya...</option>
+            <option>Paagalpan</option>
+            <option>Moksha: Salvation</option>
+            <option>Style</option>
+            <option>Rehnaa Hai Terre Dil Mein</option>
+            <option>Officer</option>
+            <option>Rahul</option>
+            <option>Pyaar Zindagi Hai</option>
+            <option>Yeh Raaste Hain Pyaar Ke</option>
+            <option>Tum Bin...: Love Will Find a Way</option>
+            <option>Yeh Teraa Ghar Yeh Meraa Ghar</option>
+            <option>Zubeidaa</option>
+            <option>Mohabbatein</option>
+            <option>Dhadkan</option>
+            <option>Mission Kashmir</option>
+            <option>Kaho Naa... Pyaar Hai</option>
+            <option>Badal</option>
+            <option>Dulhan Hum Le Jayenge</option>
+            <option>Tera Mera Saath Rahen</option>
+            <option>Yeh Zindagi Ka Safar</option>
+            <option>Josh</option>
+            <option>Aaghaaz</option>
+            <option>Aaj Ka Ravan</option>
+            <option>Fiza</option>
+            <option>Anjaane</option>
+            <option>Refugee</option>
+            <option>Kya Kehna</option>
+            <option>Beti No. 1</option>
+            <option>Bichhoo</option>
+            <option>Baaghi</option>
+            <option>Bulandi</option>
+            <option>Billa No. 786</option>
+            <option>Bhai Thakur</option>
+            <option>Bawandar</option>
+            <option>Astitva</option>
+            <option>Champion</option>
+            <option>Deewane</option>
+            <option>Dhaai Akshar Prem Ke</option>
+            <option>Gang</option>
+            <option>Ghaath</option>
+            <option>Hadh Kar Di Aapne</option>
+            <option>Har Dil Jo Pyar Karega...</option>
+            <option>Hari-Bhari</option>
+            <option>Hera Pheri</option>
+            <option>Hamara Dil Aapke Paas Hai</option>
+            <option>Hum To Mohabbat Karega</option>
+            <option>Hey Ram</option>
+            <option>Dil Pe Mat Le Yaar!!</option>
+            <option>Chal Mere Bhai</option>
+            <option>Gaja Gamini</option>
+            <option>Jallad No. 1</option>
+            <option>Jis Desh Mein Ganga Rehta Hain</option>
+            <option>Jung</option>
+            <option>Jungle</option>
+            <option>Kahin Pyaar Na Ho Jaaye</option>
+            <option>Joru Ka Ghulam</option>
+            <option>Khauff</option>
+            <option>Khiladi 420</option>
+            <option>Krodh</option>
+            <option>Kurukshetra</option>
+            <option>Pukar</option>
+            <option>Mela</option>
+            <option>Phir Bhi Dil Hai Hindustani</option>
+            <option>Raja Ko Rani Se Pyar Ho Gaya</option>
+            <option>Raju Chacha</option>
+            <option>Nidaan</option>
+            <option>Shikari</option>
+            <option>Ramayana: The Legend of Prince Rama</option>
+            <option>Tera Jadoo Chal Gayaa</option>
+            <option>Meri Jung Ka Elaan</option>
+            <option>Kunwara</option>
+            <option>The Revenge: Geeta Mera Naam</option>
+            <option>Aa Ab Laut Chalen</option>
+            <option>Arjun Pandit</option>
+            <option>Baadshah</option>
+            <option>Aarzoo</option>
+            <option>Anari No. 1</option>
+            <option>Bade Dilwala</option>
+            <option>Sultaan</option>
+            <option>Tarkieb</option>
+            <option>Biwi No. 1</option>
+            <option>Bhopal Express</option>
+            <option>Chehraa</option>
+            <option>Daag: The Fire</option>
+            <option>Dahek: A Burning Passion</option>
+            <option>Dillagi</option>
+            <option>Dulhan Banoo Main Teri</option>
+            <option>Gair</option>
+            <option>Godmother</option>
+            <option>Dil Kya Kare</option>
+            <option>Haseena Maan Jaayegi</option>
+            <option>Hindustan Ki Kasam</option>
+            <option>Hogi Pyaar Ki Jeet</option>
+            <option>Hello Brother</option>
+            <option>Hu Tu Tu</option>
+            <option>Hum Aapke Dil Mein Rehte Hain</option>
+            <option>Hum Dil De Chuke Sanam</option>
+            <option>Hum Saath-Saath Hain: We Stand United</option>
+            <option>Hote Hote Pyar Hogaya</option>
+            <option>Heera Lal Panna Lal</option>
+            <option>International Khiladi</option>
+            <option>Jaanam Samjha Karo</option>
+            <option>Jaanwar</option>
+            <option>Kaala Samrajya</option>
+            <option>Jahan Tum Le Chalo</option>
+            <option>Kachche Dhaage</option>
+            <option>Hum Tum Pe Marte Hain</option>
+            <option>Kartoos</option>
+            <option>Kohram</option>
+            <option>Kaun?</option>
+            <option>Khoobsurat</option>
+            <option>Lal Baadshah</option>
+            <option>Kahani Kismat Ki</option>
+            <option>Laawaris</option>
+            <option>Mann</option>
+            <option>Mast</option>
+            <option>Pyaar Koi Khel Nahin</option>
+            <option>Pyaar Mein Kabhi Kabhi...</option>
+            <option>Nyaydaata</option>
+            <option>Rajaji</option>
+            <option>Samar</option>
+            <option>Sangharsh</option>
+            <option>Mother</option>
+            <option>Phool Aur Aag</option>
+            <option>Safari</option>
+            <option>Shool</option>
+            <option>Split Wide Open</option>
+            <option>Sanyasi Mera Naam</option>
+            <option>Silsila Hai Pyar Ka</option>
+            <option>Trishakti</option>
+            <option>Vaastav: The Reality</option>
+            <option>Thakshak</option>
+            <option>Sooryavansham</option>
+            <option>Shera</option>
+            <option>Sarfarosh</option>
+            <option>Kuch Kuch Hota Hai</option>
+            <option>Zulmi</option>
+            <option>Soldier</option>
+            <option>Pyaar To Hona Hi Tha</option>
+            <option>Taal</option>
+            <option>Sirf Tum</option>
+            <option>Pyaar Kiya To Darna Kya</option>
+            <option>Dil Se..</option>
+            <option>Ghulam</option>
+            <option>Major Saab</option>
+            <option>Yeh Hai Mumbai Meri Jaan</option>
+            <option>Dulhe Raja</option>
+            <option>Bade Miyan Chote Miyan</option>
+            <option>China Gate</option>
+            <option>2001: Do Hazaar Ek</option>
+            <option>Aakrosh: Cyclone of Anger</option>
+            <option>Achanak</option>
+            <option>Badmaash</option>
+            <option>Bandhan</option>
+            <option>Dand Nayak</option>
+            <option>Aunty No. 1</option>
+            <option>Doli Saja Ke Rakhna</option>
+            <option>Duplicate</option>
+            <option>Dushman</option>
+            <option>Gharwali Baharwali</option>
+            <option>Dhoondte Reh Jaaoge!</option>
+            <option>Do Numbri</option>
+            <option>My Dear Kuttichaathan</option>
+            <option>Ghar Bazar</option>
+            <option>Gunda</option>
+            <option>Ganga Ki Kasam</option>
+            <option>Himmatwala</option>
+            <option>Humse Badhkar Kaun: The Entertainer</option>
+            <option>Hitler</option>
+            <option>Hero Hindustani</option>
+            <option>Hazaar Chaurasi Ki Maa</option>
+            <option>Hafta Vasuli</option>
+            <option>Kabhi Na Kabhi</option>
+            <option>Iski Topi Uske Sarr</option>
+            <option>Jab Pyaar Kisise Hota Hai</option>
+            <option>Jhooth Bole Kauwa Kaate</option>
+            <option>Kudrat</option>
+            <option>Maharaja</option>
+            <option>Hyderabad Blues</option>
+            <option>Jaane Jigar</option>
+            <option>Mehndi</option>
+            <option>Mere Do Anmol Ratan</option>
+            <option>Khote Sikkey</option>
+            <option>Miss 420</option>
+            <option>Pardesi Babu</option>
+            <option>Keemat: They Are Back</option>
+            <option>Prem Aggan</option>
+            <option>Millitary Raaj</option>
+            <option>Kareeb</option>
+            <option>Saat Rang Ke Sapne</option>
+            <option>Qila</option>
+            <option>Main Solah Baras Ki</option>
+            <option>Mohabbat Aur Jung</option>
+            <option>Salaakhen</option>
+            <option>Sar Utha Ke Jiyo</option>
+            <option>Ustadon Ke Ustad</option>
+            <option>Train to Pakistan</option>
+            <option>Sham Ghansham</option>
+            <option>Wajood</option>
+            <option>Satya</option>
+            <option>Saaz</option>
+            <option>Zakhm</option>
+            <option>Zor: Never Underestimate the Force</option>
+            <option>Yugpurush: A Man Who Comes Just Once in a Way</option>
+            <option>Sher-E-Hindustan</option>
+            <option>Saazish</option>
+            <option>Tirchhi Topiwale</option>
+            <option>Vinashak - Destroyer</option>
+            <option>Dil To Pagal Hai</option>
+            <option>Pardes</option>
+            <option>Ishq</option>
+            <option>Gupt: The Hidden Truth</option>
+            <option>Zulm-O-Sitam</option>
+            <option>Yamraaj</option>
+            <option>Ziddi</option>
+            <option>Koyla</option>
+            <option>Judaai</option>
+            <option>Deewana Mastana</option>
+            <option>Aar Ya Paar</option>
+            <option>Aastha: In the Prison of Spring</option>
+            <option>Aflatoon</option>
+            <option>...Aur Pyaar Ho Gaya</option>
+            <option>Auzaar</option>
+            <option>Hero No. 1</option>
+            <option>Agnichakra</option>
+            <option>Daava</option>
+            <option>Dhaal: The Battle of Law Against Law</option>
+            <option>Chachi 420</option>
+            <option>Do Ankhen Barah Hath</option>
+            <option>Bhai</option>
+            <option>Chupp</option>
+            <option>Darmiyaan: In Between</option>
+            <option>Daud: Fun on the Run</option>
+            <option>Gudia</option>
+            <option>Hameshaa</option>
+            <option>Gudgudee</option>
+            <option>Himalay Putra</option>
+            <option>Ghulam-E-Musthafa</option>
+            <option>Banarasi Babu</option>
+            <option>Ek Phool Teen Kante</option>
+            <option>Jodidar</option>
+            <option>Judwaa</option>
+            <option>Jeeo Shaan Se</option>
+            <option>Insaaf: The Final Justice</option>
+            <option>Kaalia</option>
+            <option>Jeevan Yudh</option>
+            <option>Kaun Sachcha Kaun Jhootha</option>
+            <option>Loha</option>
+            <option>Itihaas</option>
+            <option>Judge Mujrim</option>
+            <option>Lav Kush</option>
+            <option>Kaun Rokega Mujhe</option>
+            <option>Mrityudaata</option>
+            <option>Mere Sapno Ki Rani</option>
+            <option>Naseeb</option>
+            <option>Mr. & Mrs. Khiladi</option>
+            <option>Qahar</option>
+            <option>Krishna Arjun</option>
+            <option>Raja Ki Ayegi Baraat</option>
+            <option>Lahoo Ke Do Rang</option>
+            <option>Mahaanta: The Film</option>
+            <option>The Death Sentence: Mrityu Dand</option>
+            <option>Uff! Yeh Mohabbat</option>
+            <option>Prithvi</option>
+            <option>Suraj</option>
+            <option>Virasat</option>
+            <option>Salma Pe Dil Aa Gaya</option>
+            <option>Yes Boss</option>
+            <option>Sanam</option>
+            <option>Raja Hindustani</option>
+            <option>Jeet</option>
+            <option>Yeshwant</option>
+            <option>Sixth Happiness</option>
+            <option>Shapath</option>
+            <option>Ghatak: Lethal</option>
+            <option>Angaara</option>
+            <option>Agni Sakshi</option>
+            <option>Saajan Chale Sasural</option>
+            <option>Tarazu</option>
+            <option>Army</option>
+            <option>Aur Ek Prem Kahani</option>
+            <option>Aisi Bhi Kya Jaldi Hai</option>
+            <option>Ajay</option>
+            <option>Aurat Aurat Aurat</option>
+            <option>Bal Bramhachari</option>
+            <option>Bandish</option>
+            <option>Beqabu</option>
+            <option>Bhishma</option>
+            <option>Chaahat</option>
+            <option>Chhote Sarkar</option>
+            <option>Daraar</option>
+            <option>Dastak</option>
+            <option>Apne Dam Par</option>
+            <option>Diljale</option>
+            <option>Aatank</option>
+            <option>Dushman Duniya Ka</option>
+            <option>Daanveer</option>
+            <option>Bambai Ka Babu</option>
+            <option>English Babu Desi Mem</option>
+            <option>Fire</option>
+            <option>Bangaru Bullodu</option>
+            <option>Dil Tera Diwana</option>
+            <option>Is Raat Ki Subah Nahin</option>
+            <option>Himmat</option>
+            <option>Ek Tha Raja</option>
+            <option>Jaan</option>
+            <option>Himmatvar</option>
+            <option>Dushmani: A Violent Love Story</option>
+            <option>Loafer</option>
+            <option>Khiladiyon Ka Khiladi</option>
+            <option>Krishna</option>
+            <option>Khamoshi: The Musical</option>
+            <option>Maahir</option>
+            <option>Yeh Majhdhaar</option>
+            <option>Fareb</option>
+            <option>Jung</option>
+            <option>Masoom</option>
+            <option>Jurmana</option>
+            <option>Muqaddar</option>
+            <option>Namak</option>
+            <option>Mafia</option>
+            <option>Mr. Bechara</option>
+            <option>PremGranth</option>
+            <option>Megha</option>
+            <option>Rajkumar</option>
+            <option>Rakshak</option>
+            <option>Papa Kahte Hain</option>
+            <option>Maachis</option>
+            <option>Nirbhay</option>
+            <option>Rangbaaz</option>
+            <option>Sapoot</option>
+            <option>Sanshodhan</option>
+            <option>Shastra</option>
+            <option>Ram Aur Shyam</option>
+            <option>Papi Gudia</option>
+            <option>Return of Jewel Thief</option>
+            <option>Tere Mere Sapne</option>
+            <option>Vijeta</option>
+            <option>Sardari Begum</option>
+            <option>The Making of the Mahatma</option>
+            <option>Smuggler</option>
+            <option>Tu Chor Main Sipahi</option>
+            <option>Zordaar</option>
+            <option>Aatank Hi Aatank</option>
+            <option>Aazmayish</option>
+            <option>Ahankaar</option>
+            <option>Akele Hum Akele Tum</option>
+            <option>Vishwasghaat</option>
+            <option>Andolan</option>
+            <option>Angrakshak</option>
+            <option>Baazi</option>
+            <option>Barsaat</option>
+            <option>Bewafa Sanam</option>
+            <option>Coolie No. 1</option>
+            <option>Yash</option>
+            <option>Gaddaar</option>
+            <option>Dilwale Dulhania Le Jayenge</option>
+            <option>Criminal</option>
+            <option>Dil Ka Doctor</option>
+            <option>Diya Aur Toofan</option>
+            <option>Ab Insaf Hoga</option>
+            <option>Fauji</option>
+            <option>Haathkadi</option>
+            <option>Gundaraj</option>
+            <option>Haqeeqat</option>
+            <option>Hulchul</option>
+            <option>God and Gun</option>
+            <option>Gunehgar</option>
+            <option>Guddu</option>
+            <option>Hum Dono</option>
+            <option>Jallaad</option>
+            <option>Janam Kundli</option>
+            <option>Jawab</option>
+            <option>Karan Arjun</option>
+            <option>Kartavya</option>
+            <option>Jai Vikraanta</option>
+            <option>Kalyug Ke Avtaar</option>
+            <option>Mera Damad</option>
+            <option>Hum Sab Chor Hain</option>
+            <option>Naseem</option>
+            <option>Naajayaz</option>
+            <option>Nazar Ke Samne</option>
+            <option>Kismat</option>
+            <option>Oh Darling Yeh Hai India</option>
+            <option>Nishana</option>
+            <option>Maidan-E-Jung</option>
+            <option>Policewala Gunda</option>
+            <option>Prem</option>
+            <option>Milan</option>
+            <option>Param Vir Chakra</option>
+            <option>Raja</option>
+            <option>Paandav</option>
+            <option>Rangeela</option>
+            <option>Ram Jaane</option>
+            <option>Ram Shastra</option>
+            <option>Raasaiyya</option>
+            <option>Paappi Devataa</option>
+            <option>Saajan Ki Baahon Mein</option>
+            <option>Rock Dancer</option>
+            <option>Ravan Raaj: A True Story</option>
+            <option>Sauda</option>
+            <option>Surakshaa</option>
+            <option>Takkar</option>
+            <option>Taqdeerwala</option>
+            <option>Sanjay</option>
+            <option>Sabse Bada Khiladi</option>
+            <option>Gambler</option>
+            <option>Yaraana</option>
+            <option>Veergati</option>
+            <option>Sarhad: The Border of Crime</option>
+            <option>Mohra</option>
+            <option>Target</option>
+            <option>Taaqat</option>
+            <option>Hum Aapke Hain Koun...!</option>
+            <option>Raja Babu</option>
+            <option>Krantiveer</option>
+            <option>The Don</option>
+            <option>Laadla</option>
+            <option>Yeh Dillagi</option>
+            <option>Main Khiladi Tu Anari</option>
+            <option>Dilwale</option>
+            <option>Suhaag</option>
+            <option>Vijaypath</option>
+            <option>Zamaana Deewana</option>
+            <option>Trimurti</option>
+            <option>Aa Gale Lag Jaa</option>
+            <option>Aag</option>
+            <option>1942: A Love Story</option>
+            <option>Aag Andhi Aur Toofan</option>
+            <option>Aatish: Feel the Fire</option>
+            <option>Andaz</option>
+            <option>Andaz Apna Apna</option>
+            <option>Amaanat</option>
+            <option>Aranyaka</option>
+            <option>Baali Umar Ko Salaam</option>
+            <option>Anjaam</option>
+            <option>Aag Aur Chingari</option>
+            <option>Brahma</option>
+            <option>Betaaj Badshah</option>
+            <option>Chaand Kaa Tukdaa</option>
+            <option>Aao Pyaar Karen</option>
+            <option>Dilbar</option>
+            <option>Chauraha</option>
+            <option>Cheetah</option>
+            <option>Beta Ho To Aisa</option>
+            <option>Anth</option>
+            <option>Bandit Queen</option>
+            <option>Droh Kaal</option>
+            <option>Ekka Raja Rani</option>
+            <option>Elaan</option>
+            <option>Eena Meena Deeka</option>
+            <option>Chhoti Bahoo</option>
+            <option>Do Fantoosh</option>
+            <option>Dulaara</option>
+            <option>Ghar Ki Izzat</option>
+            <option>Hanste Khelte</option>
+            <option>Hum Hain Bemisaal</option>
+            <option>Ganga Aur Ranga</option>
+            <option>Insaaf Apne Lahoo Se</option>
+            <option>Jai Kishen</option>
+            <option>Janam Se Pehle</option>
+            <option>Gopi Kishan</option>
+            <option>Gangster</option>
+            <option>Ikke Pe Ikka</option>
+            <option>Kabhi Haan Kabhi Naa</option>
+            <option>Insaniyat</option>
+            <option>Khuddar</option>
+            <option>Ishq Mein Jeena Ishq Mein Marna</option>
+            <option>Juaari</option>
+            <option>Jazbaat</option>
+            <option>Janata Ki Adalat</option>
+            <option>Madam X</option>
+            <option>Khudai</option>
+            <option>Karan</option>
+            <option>Mammo</option>
+            <option>Madhosh</option>
+            <option>Naaraaz</option>
+            <option>Kranti Kshetra</option>
+            <option>Pehla Pehla Pyar</option>
+            <option>Maha Shaktishaali</option>
+            <option>Prem Shakti</option>
+            <option>Saajan Ka Ghar</option>
+            <option>Mr. Azaad</option>
+            <option>Paramaatma</option>
+            <option>Prem Yog</option>
+            <option>Stunttman</option>
+            <option>Pyar Ka Rog</option>
+            <option>Udhaar Ki Zindagi</option>
+            <option>Teesra Kaun?</option>
+            <option>The Gentleman</option>
+            <option>Woh Chokri</option>
+            <option>Sangdil Sanam</option>
+            <option>Yaar Gaddar</option>
+            <option>Zaalim</option>
+            <option>Zamane Se Kya Darna</option>
+            <option>Aag Ka Toofaan</option>
+            <option>Vaade Iraade</option>
+            <option>Zakhmi Dil</option>
+            <option>Aadmi Khilona Hai</option>
+            <option>Aaina</option>
+            <option>Aaja Meri Jaan</option>
+            <option>Aankhen</option>
+            <option>Aashik Aawara</option>
+            <option>Aadmi</option>
+            <option>Yuhi Kabhi</option>
+            <option>Anmol</option>
+            <option>Aulad Ke Dushman</option>
+            <option>Aasoo Bane Angaarey</option>
+            <option>Anari</option>
+            <option>Ashaant</option>
+            <option>Bhaji on the Beach</option>
+            <option>Bedardi</option>
+            <option>Balmaa</option>
+            <option>Baazigar</option>
+            <option>Chahoonga Main Tujhe</option>
+            <option>Damini</option>
+            <option>Dalaal</option>
+            <option>Bhagyawan</option>
+            <option>Bhookamp</option>
+            <option>Dhanwaan</option>
+            <option>Dhartiputra</option>
+            <option>Dil Hai Betaab</option>
+            <option>Chor Aur Chand</option>
+            <option>Dil Ki Baazi</option>
+            <option>Dil Tera Aashiq</option>
+            <option>Divya Shakti</option>
+            <option>Chandra Mukhi</option>
+            <option>Gardish</option>
+            <option>Ek Hi Raasta</option>
+            <option>Darr</option>
+            <option>Gumrah</option>
+            <option>Gurudev</option>
+            <option>Hum Hain Rahi Pyar Ke</option>
+            <option>In Custody</option>
+            <option>Hasti</option>
+            <option>Game</option>
+            <option>Izzat Ki Roti</option>
+            <option>Kayda Kanoon</option>
+            <option>Insaniyat Ke Devta</option>
+            <option>Khal-Naaikaa</option>
+            <option>Khal Nayak</option>
+            <option>King Uncle</option>
+            <option>Kshatriya</option>
+            <option>Gunaah</option>
+            <option>Hum Hain Kamaal Ke</option>
+            <option>Geetanjali</option>
+            <option>Jeevan Ki Shatranj</option>
+            <option>Mahakaal</option>
+            <option>Maya</option>
+            <option>Muqabla</option>
+            <option>Pardesi</option>
+            <option>Patang</option>
+            <option>Pehchaan</option>
+            <option>Pehla Nasha</option>
+            <option>Meri Aan</option>
+            <option>Krishan Avtaar</option>
+            <option>Lootere</option>
+            <option>Phool</option>
+            <option>Phool Aur Angaar</option>
+            <option>Platform</option>
+            <option>Professor Ki Padosan</option>
+            <option>Phir Teri Kahani Yaad Aayee</option>
+            <option>Papeeha</option>
+            <option>Police Wala</option>
+            <option>Sainik</option>
+            <option>Phoolan Hasina Ramkali</option>
+            <option>Sahibaan</option>
+            <option>Rang</option>
+            <option>Sangram</option>
+            <option>Roop Ki Rani Choron Ka Raja</option>
+            <option>Rudaali</option>
+            <option>Pyar Pyar</option>
+            <option>Shaktiman</option>
+            <option>Shatranj</option>
+            <option>Shreemaan Aashique</option>
+            <option>Tadipaar</option>
+            <option>Sardar</option>
+            <option>Pyaar Ka Tarana</option>
+            <option>Sir</option>
+            <option>Veerta</option>
+            <option>Waqt Hamara Hai</option>
+            <option>Zakhmi Rooh</option>
+            <option>Deewana</option>
+            <option>Khuda Gawah</option>
+            <option>Santaan</option>
+            <option>Yugandhar</option>
+            <option>Vishwatma</option>
+            <option>Vansh</option>
+            <option>Tahqiqaat</option>
+            <option>Zakhmo Ka Hisaab</option>
+            <option>Dil Ka Kya Kasoor</option>
+            <option>Raat</option>
+            <option>Mere Sajana Saath Nibhana</option>
+            <option>Meera Ka Mohan</option>
+            <option>Panaah</option>
+            <option>Suryavanshi</option>
+            <option>Virodhi</option>
+            <option>Jaan Tere Naam</option>
+            <option>Current</option>
+            <option>I Love You</option>
+            <option>Insaaf Ki Devi</option>
+            <option>Sarphira</option>
+            <option>Zindagi Ek Juaa</option>
+            <option>Adharm</option>
+            <option>Police Officer</option>
+            <option>Humlaa</option>
+            <option>Prem Deewane</option>
+            <option>Tyagi</option>
+            <option>Laat Saab</option>
+            <option>Kasak</option>
+            <option>Mr. Bond</option>
+            <option>Saatwan Aasman</option>
+            <option>Jaan Se Pyaara</option>
+            <option>Mashooq</option>
+            <option>Zulm Ki Hukumat</option>
+            <option>Chamatkar</option>
+            <option>Jo Jeeta Wohi Sikandar</option>
+            <option>Nishchaiy</option>
+            <option>Parda Hai Parda</option>
+            <option>Bekhudi</option>
+            <option>Police Aur Mujrim</option>
+            <option>Sapne Saajan Ke</option>
+            <option>Ek Ladka Ek Ladki</option>
+            <option>Radha Ka Sangam</option>
+            <option>Aaj Ka Goonda Raaj</option>
+            <option>Deedar</option>
+            <option>Bol Radha Bol</option>
+            <option>Jeena Marna Tere Sang</option>
+            <option>Humshakal</option>
+            <option>Angaar</option>
+            <option>Bewaffa Se Waffa</option>
+            <option>Balwaan</option>
+            <option>Khel</option>
+            <option>Dilwale Kabhi Na Hare</option>
+            <option>Junoon</option>
+            <option>Drohi</option>
+            <option>Yalgaar</option>
+            <option>Jigar</option>
+            <option>Suraj Ka Satvan Ghoda</option>
+            <option>Isi Ka Naam Zindagi</option>
+            <option>Muskurahat</option>
+            <option>Raju Ban Gaya Gentleman</option>
+            <option>Ghar Jamai</option>
+            <option>Jaanam</option>
+            <option>Khule-Aam</option>
+            <option>Sangeet</option>
+            <option>Umar 55 Ki Dil Bachpan Ka</option>
+            <option>Baaz</option>
+            <option>Roja</option>
+            <option>Antarnaad</option>
+            <option>Ajooba</option>
+            <option>Akayla</option>
+            <option>Aakhri Cheekh</option>
+            <option>Aag Laga Do Sawan Ko</option>
+            <option>Afsana Pyar Ka</option>
+            <option>Ayee Milan Ki Raat</option>
+            <option>Benaam Badsha</option>
+            <option>Aaj Ka Samson</option>
+            <option>Dancer</option>
+            <option>Deshwasi</option>
+            <option>100 Days</option>
+            <option>Banjaran</option>
+            <option>Dushman Devta</option>
+            <option>Bhabhi</option>
+            <option>Ek Ghar</option>
+            <option>Dil Hai Ki Manta Nahin</option>
+            <option>Farishtay</option>
+            <option>Fateh</option>
+            <option>Begunaah</option>
+            <option>Do Matwale</option>
+            <option>Diksha</option>
+            <option>Dharam Sankat</option>
+            <option>First Love Letter</option>
+            <option>Hum</option>
+            <option>Henna</option>
+            <option>House No. 13</option>
+            <option>Hafta Bandh</option>
+            <option>Jeena Teri Gali Mein</option>
+            <option>Ghar Parivaar</option>
+            <option>Izzat</option>
+            <option>Karz Chukana Hai</option>
+            <option>Khoon Ka Karz</option>
+            <option>Indrajeet</option>
+            <option>Jaan Pechaan</option>
+            <option>Khilaaf</option>
+            <option>Kohraam</option>
+            <option>Iraada</option>
+            <option>Kurbaan</option>
+            <option>Jigarwala</option>
+            <option>Kaun Kare Kurbanie</option>
+            <option>Lamhe</option>
+            <option>Kasba</option>
+            <option>Khooni Raat</option>
+            <option>Love</option>
+            <option>Mast Kalandar</option>
+            <option>Khooni Panja</option>
+            <option>Lakshmanrekha</option>
+            <option>Mehandi Ban Gai Khoon</option>
+            <option>Patthar Ke Phool</option>
+            <option>Phool Aur Kaante</option>
+            <option>Maa</option>
+            <option>Phool Bane Angaarey</option>
+            <option>Narasimha</option>
+            <option>Prahaar: The Final Attack</option>
+            <option>Paap Ki Aandhi</option>
+            <option>Pyaar Ka Saaya</option>
+            <option>Ramgarh Ke Sholay</option>
+            <option>Numbri Aadmi</option>
+            <option>Nazar</option>
+            <option>Pratigyabadh</option>
+            <option>Ranbhoomi</option>
+            <option>Rupaye Dus Karod</option>
+            <option>Saajan</option>
+            <option>Qurbani Rang Layegi</option>
+            <option>Pita</option>
+            <option>Saathi</option>
+            <option>Sau Crore</option>
+            <option>Saudagar</option>
+            <option>Sadak</option>
+            <option>Sapnon Ka Mandir</option>
+            <option>Sanam Bewafa</option>
+            <option>Pratikar</option>
+            <option>Prem Qaidi</option>
+            <option>Shankara</option>
+            <option>Saugandh</option>
+            <option>Swarg Yahan Narak Yahan</option>
+            <option>Swarg Jaisaa Ghar</option>
+            <option>Trinetra</option>
+            <option>Yaara Dildara</option>
+            <option>Shiv Ram</option>
+            <option>Aaj Ka Arjun</option>
+            <option>Aag Ka Gola</option>
+            <option>Aandhiyan</option>
+            <option>Aaj Ke Shahenshah</option>
+            <option>Yeh Aag Kab Bujhegi</option>
+            <option>Amiri Garibi</option>
+            <option>Aashiqui</option>
+            <option>Agneekaal</option>
+            <option>Shikari: The Hunter</option>
+            <option>Vishnu-Devaa</option>
+            <option>Aawaz De Kahan Hai</option>
+            <option>Awwal Number</option>
+            <option>Azaad Desh Ke Gulam</option>
+            <option>Amba</option>
+            <option>Baaghi: A Rebel for Love</option>
+            <option>Baap Numbri Beta Dus Numbri</option>
+            <option>Bahaar Aane Tak</option>
+            <option>Bandh Darwaza</option>
+            <option>Agneepath</option>
+            <option>Awaargi</option>
+            <option>C.I.D.</option>
+            <option>Chor Pe Mor</option>
+            <option>Dil</option>
+            <option>Deewana Mujh Sa Nahin</option>
+            <option>Apmaan Ki Aag</option>
+            <option>Ghar Ho To Aisa</option>
+            <option>Drishti</option>
+            <option>Ek Doctor Ki Maut</option>
+            <option>Ghayal</option>
+            <option>Dushman</option>
+            <option>Haatim Tai</option>
+            <option>Doodh Ka Karz</option>
+            <option>Gunahon Ka Devta</option>
+            <option>Jawani Zindabad</option>
+            <option>Jamai Raja</option>
+            <option>Jai Shiv Shankar</option>
+            <option>Kaaranama</option>
+            <option>Hum Se Na Takrana</option>
+            <option>Izzatdaar</option>
+            <option>Jeevan Ek Sanghursh</option>
+            <option>Jeene Do</option>
+            <option>Maha-Sangram</option>
+            <option>Kishen Kanhaiya</option>
+            <option>Khatarnaak</option>
+            <option>Mera Pati Sirf Mera Hai</option>
+            <option>Police Public</option>
+            <option>Naaka Bandi</option>
+            <option>Pati Patni Aur Tawaif</option>
+            <option>Kafan</option>
+            <option>Kali Ganga</option>
+            <option>Jurm</option>
+            <option>Pratibandh</option>
+            <option>Sailaab</option>
+            <option>Nyay Anyay</option>
+            <option>Shiva</option>
+            <option>Shaitani Ilaaka</option>
+            <option>Pyar Ke Naam Qurbaan</option>
+            <option>Pyar Ka Karz</option>
+            <option>Raeeszada</option>
+            <option>Sheshnaag</option>
+            <option>Shandaar</option>
+            <option>Sher Dil</option>
+            <option>Tejaa</option>
+            <option>Swarg</option>
+            <option>Veeru Dada</option>
+            <option>Zahreelay</option>
+            <option>Taqdeer Ka Tamasha</option>
+            <option>Thodasa Roomani Ho Jaayen</option>
+            <option>Thanedaar</option>
+            <option>Ram Lakhan</option>
+            <option>Asmaan Se Ooncha</option>
+            <option>Tridev</option>
+            <option>Chaalbaaz</option>
+            <option>Batwara</option>
+            <option>Bade Ghar Ki Beti</option>
+            <option>Bhrashtachar</option>
+            <option>Maine Pyar Kiya</option>
+            <option>Daata</option>
+            <option>Dav Pech</option>
+            <option>Daddy</option>
+            <option>Dana Paani</option>
+            <option>Chandni</option>
+            <option>Eeshwar</option>
+            <option>Do Qaidi</option>
+            <option>Gair Kaanooni</option>
+            <option>Gawaahi</option>
+            <option>Goonj</option>
+            <option>Hero Hiralal</option>
+            <option>Ghar Ka Chiraag</option>
+            <option>Guru</option>
+            <option>Joshilaay</option>
+            <option>Hisaab Khoon Ka</option>
+            <option>Hum Bhi Insaan Hain</option>
+            <option>Ilaaka</option>
+            <option>Jaadugar</option>
+            <option>Hum Intezaar Karenge</option>
+            <option>Jaaydaad</option>
+            <option>Jaisi Karni Waisi Bharni</option>
+            <option>Kanoon Apna Apna</option>
+            <option>Khayal Gatha</option>
+            <option>Kala Bazaar</option>
+            <option>Jung Baaz</option>
+            <option>Ladaai</option>
+            <option>Lashkar</option>
+            <option>Mahaadev</option>
+            <option>Love Love Love</option>
+            <option>Main Azaad Hoon</option>
+            <option>Main Tera Dushman</option>
+            <option>Nigahen: Nagina Part II</option>
+            <option>Mujrim</option>
+            <option>Main Tere Liye</option>
+            <option>Paraya Ghar</option>
+            <option>Prem Pratigyaa</option>
+            <option>Purani Haveli</option>
+            <option>Sachai Ki Taqat</option>
+            <option>SachchÃƒÂ© KÃƒÂ¡ Bol-BÃƒÂ¡lÃƒÂ¡</option>
+            <option>Shehzaade</option>
+            <option>Sikka</option>
+            <option>Suryaa: An Awakening</option>
+            <option>Toofan</option>
+            <option>Parinda</option>
+            <option>Raakh</option>
+            <option>Ustaad</option>
+            <option>Vardi</option>
+            <option>Vicky Dada</option>
+            <option>Aaj Ka Robin Hood</option>
+            <option>Aage Ki Soch</option>
+            <option>Aakhri Adaalat</option>
+            <option>Agnee</option>
+            <option>Akarshan</option>
+            <option>Andhaa Yudh</option>
+            <option>Aaj Ke Angaarey</option>
+            <option>Aurat Teri Yehi Kahani</option>
+            <option>Charnon Ki Saugandh</option>
+            <option>Bees Saal Baad</option>
+            <option>Biwi Ho To Aisi</option>
+            <option>Daisy</option>
+            <option>Commando</option>
+            <option>Dariya Dil</option>
+            <option>Dayavan</option>
+            <option>Dharamyudh</option>
+            <option>Do Waqt Ki Roti</option>
+            <option>Ek Hi Maqsad</option>
+            <option>Ek Naya Rishta</option>
+            <option>Halaal Ki Kamai</option>
+            <option>Ganga Tere Desh Mein</option>
+            <option>Gangaa Jamunaa Saraswathi</option>
+            <option>Ghar Ghar Ki Kahani</option>
+            <option>Ghar Mein Ram Gali Mein Shyam</option>
+            <option>Gunahon Ka Faisla</option>
+            <option>Faisla</option>
+            <option>Hatya</option>
+            <option>Hum Farishte Nahin</option>
+            <option>Inteqam</option>
+            <option>Jeete Hain Shaan Se</option>
+            <option>Jungle Ki Beti</option>
+            <option>Kab Tak Chup Rahungi</option>
+            <option>Kabrastan</option>
+            <option>Kanwarlal</option>
+            <option>Kabzaa</option>
+            <option>Khoon Bhari Maang</option>
+            <option>Khatron Ke Khiladi</option>
+            <option>Libaas</option>
+            <option>Maalamaal</option>
+            <option>Mahaveera</option>
+            <option>Main Zinda Hoon</option>
+            <option>Mar Mitenge</option>
+            <option>Mardon Wali Baat</option>
+            <option>Mohabbat Ke Dushman</option>
+            <option>Mohre</option>
+            <option>Mulzim</option>
+            <option>Namumkin</option>
+            <option>Paanch Fauladi</option>
+            <option>Paap Ki Duniya</option>
+            <option>Paap Ko Jalaa Kar Raakh Kar Doonga</option>
+            <option>Pestonjee</option>
+            <option>Pushpak</option>
+            <option>Pyaar Mohabbat</option>
+            <option>Rihaee</option>
+            <option>Rukhsat</option>
+            <option>Saazish</option>
+            <option>Ram-Avtar</option>
+            <option>Qatil</option>
+            <option>Pyar Ka Mandir</option>
+            <option>Rama O Rama</option>
+            <option>Qayamat Se Qayamat Tak</option>
+            <option>Sherni</option>
+            <option>Sagar Sangam</option>
+            <option>Sone Pe Suhaaga</option>
+            <option>Shahenshah</option>
+            <option>Soorma Bhopali</option>
+            <option>Shiva Shakti</option>
+            <option>Salaam Bombay!</option>
+            <option>Vijay</option>
+            <option>Tezaab</option>
+            <option>The Deceivers</option>
+            <option>Tohfa Mohabbat Ka</option>
+            <option>Trishagni</option>
+            <option>Veerana</option>
+            <option>Zulm Ko Jala Doonga</option>
+            <option>Woh Phir Aayegi</option>
+            <option>Waaris</option>
+            <option>Waqt Ki Awaz</option>
+            <option>Yateem</option>
+            <option>Zakhmi Aurat</option>
+            <option>Zalzala</option>
+            <option>Aag Hi Aag</option>
+            <option>Aaj</option>
+            <option>Apne Apne</option>
+            <option>Aulad</option>
+            <option>Avam</option>
+            <option>Dacait</option>
+            <option>Dadagiri</option>
+            <option>Dak Bangla</option>
+            <option>Daku Hasina</option>
+            <option>Dance Dance</option>
+            <option>Deewana Tere Naam Ka</option>
+            <option>Dil Tujhko Diya</option>
+            <option>Hifazat</option>
+            <option>Hawalaat</option>
+            <option>Hiraasat</option>
+            <option>Diljalaa</option>
+            <option>Himmat Aur Mehanat</option>
+            <option>Ijaazat</option>
+            <option>Imaandaar</option>
+            <option>Inaam Dus Hazaar</option>
+            <option>Hukumat</option>
+            <option>Insaniyat Ke Dushman</option>
+            <option>Insaaf</option>
+            <option>Jaan Hatheli Pe</option>
+            <option>Jalwa</option>
+            <option>Insaf Ki Pukar</option>
+            <option>Itihaas</option>
+            <option>Kaash'</option>
+            <option>Kaun Jeeta Kaun Haara</option>
+            <option>Khazana</option>
+            <option>Khudgarz</option>
+            <option>Loha</option>
+            <option>Jhanjaar</option>
+            <option>Mera Yaar Mera Dushman</option>
+            <option>Madadgaar</option>
+            <option>Marte Dam Tak</option>
+            <option>Mard Ki Zabaan</option>
+            <option>Majaal</option>
+            <option>Mera Karam Mera Dharam</option>
+            <option>Mera Lahoo</option>
+            <option>Pratighaat</option>
+            <option>Mr. India</option>
+            <option>Muqaddar Ka Faisla</option>
+            <option>Naam O Nishan</option>
+            <option>Mirch Masala</option>
+            <option>Nazrana</option>
+            <option>Param Dharam</option>
+            <option>Parivaar</option>
+            <option>Pyaar Karke Dekho</option>
+            <option>Pyaar Ki Jeet</option>
+            <option>Sadak Chhap</option>
+            <option>Pyar Ke Kabil</option>
+            <option>Satyamev Jayate</option>
+            <option>Sindoor</option>
+            <option>Sitapur Ki Geeta</option>
+            <option>Susman</option>
+            <option>Sutradhar</option>
+            <option>Thikana</option>
+            <option>Uttar Dakshin</option>
+            <option>Watan Ke Rakhwale</option>
+            <option>Yeh Woh Manzil To Nahin</option>
+            <option>Aadamkhor</option>
+            <option>Aag Aur Shola</option>
+            <option>Aap Ke Saath</option>
+            <option>Adhikar</option>
+            <option>Aakhree Raasta</option>
+            <option>Aisa Pyaar Kahan</option>
+            <option>Allah-Rakha</option>
+            <option>Amrit</option>
+            <option>Amma</option>
+            <option>Andheri Raat Mein Diya Tere Haath Mein</option>
+            <option>Ankush</option>
+            <option>Anokha Rishta</option>
+            <option>Avinash</option>
+            <option>Anubhav</option>
+            <option>Asli Naqli</option>
+            <option>Bhagwaan Dada</option>
+            <option>Baat Ban Jaye</option>
+            <option>Chameli Ki Shaadi</option>
+            <option>Dahleez</option>
+            <option>Dharm Adhikari</option>
+            <option>Dilwaala</option>
+            <option>Dosti Dushmani</option>
+            <option>Ek Aur Sikander</option>
+            <option>Ek Chadar Maili Si</option>
+            <option>Ek Ruka Hua Faisla</option>
+            <option>Genesis</option>
+            <option>Ghar Sansar</option>
+            <option>Haathon Ki Lakeeren</option>
+            <option>Kala Dhanda Goray Log</option>
+            <option>Ilzaam</option>
+            <option>Insaaf Ki Awaaz</option>
+            <option>Jaal</option>
+            <option>Jeeva</option>
+            <option>Janbaaz</option>
+            <option>Kaanch Ki Deewar</option>
+            <option>Karma</option>
+            <option>Khel Mohabbat Ka</option>
+            <option>Love 86</option>
+            <option>Main Balwan</option>
+            <option>Love and God</option>
+            <option>Mera Dharam</option>
+            <option>Mazloom</option>
+            <option>Mera Haque</option>
+            <option>Naseeb Apna Apna</option>
+            <option>Nasihat</option>
+            <option>New Delhi Times</option>
+            <option>Mohabbat Ki Kasam</option>
+            <option>Muddat</option>
+            <option>Naache Mayuri</option>
+            <option>Naam</option>
+            <option>Suhagan</option>
+            <option>Palay Khan</option>
+            <option>Pyar Kiya Hai Pyar Karenge</option>
+            <option>Pyaar Ke Do Pal</option>
+            <option>Qatl</option>
+            <option>Nagina</option>
+            <option>Shart</option>
+            <option>Saveray Wali Gaadi</option>
+            <option>Singhasan</option>
+            <option>Swarag Se Sunder</option>
+            <option>Swati</option>
+            <option>Tahkhana</option>
+            <option>Tan-Badan</option>
+            <option>Shatru</option>
+            <option>Aaj Ka Daur</option>
+            <option>Zindagani</option>
+            <option>Aakhir Kyon?</option>
+            <option>Aandhi-Toofan</option>
+            <option>Aar Paar</option>
+            <option>Adventures of Tarzan</option>
+            <option>Aitbaar</option>
+            <option>Alag Alag</option>
+            <option>Aghaat</option>
+            <option>Ameer Aadmi Gharib Aadmi</option>
+            <option>Ankahee</option>
+            <option>Arjun</option>
+            <option>Awara Baap</option>
+            <option>Babu</option>
+            <option>Baadal</option>
+            <option>Balidaan</option>
+            <option>Bepanaah</option>
+            <option>Bewafai</option>
+            <option>Bhago Bhoot Aayaa</option>
+            <option>Bhavani Junction</option>
+            <option>Bond 303</option>
+            <option>Debshishu</option>
+            <option>Dekha Pyar Tumhara</option>
+            <option>Do Dilon Ki Dastaan</option>
+            <option>Durgaa</option>
+            <option>Ek Chitthi Pyar Bhari</option>
+            <option>Ek Se Bhale Do</option>
+            <option>Faasle</option>
+            <option>Damul</option>
+            <option>Ghar Dwaar</option>
+            <option>Geraftaar</option>
+            <option>Ghulami</option>
+            <option>Haqeeqat</option>
+            <option>Hoshiyar</option>
+            <option>Hum Dono</option>
+            <option>Insaaf Main Karoonga</option>
+            <option>Hum Naujawan</option>
+            <option>Jaan Ki Baazi</option>
+            <option>Jhoothi</option>
+            <option>Kabhi Ajnabi ThÃƒÂ©</option>
+            <option>Jaanoo</option>
+            <option>Karishma Kudrat Kaa</option>
+            <option>Lava</option>
+            <option>Lover Boy</option>
+            <option>Maa Kasam</option>
+            <option>Mard</option>
+            <option>Maha Shaktimaan</option>
+            <option>Mahaguru</option>
+            <option>Khamosh</option>
+            <option>Karmyudh</option>
+            <option>Nasoor</option>
+            <option>Massey Sahib</option>
+            <option>Mera Jawab</option>
+            <option>Mera Saathi</option>
+            <option>Meraa Ghar Mere Bachche</option>
+            <option>Mohabbat</option>
+            <option>Meri Jung</option>
+            <option>Phaansi Ke Baad</option>
+            <option>Paisa Yeh Paisa</option>
+            <option>Pighalta Aasman</option>
+            <option>Oonche Log</option>
+            <option>Pataal Bhairavi</option>
+            <option>Pyar Jhukta Nahin</option>
+            <option>Pyari Behna</option>
+            <option>Ram Teri Ganga Maili</option>
+            <option>Rao Saheb</option>
+            <option>Masterji</option>
+            <option>Saagar</option>
+            <option>Saaheb</option>
+            <option>Sarfarosh</option>
+            <option>Sanjog</option>
+            <option>Shiva Ka Insaaf</option>
+            <option>Tawaif</option>
+            <option>Ram Tere Kitne Nam</option>
+            <option>Ulta Seedha</option>
+            <option>Trikal (Past Present Future)</option>
+            <option>Teri Meherbaniyan</option>
+            <option>Yaadon Ki Kasam</option>
+            <option>Yudh</option>
+            <option>Zamana</option>
+            <option>Zabardast</option>
+            <option>Zulm Ka Badla</option>
+            <option>Aaj Ka M.L.A. Ram Avtar</option>
+            <option>Aaj Ki Awaz</option>
+            <option>Aan Aur Shaan</option>
+            <option>Aasmaan</option>
+            <option>Ab Ayega Mazaa</option>
+            <option>Abodh</option>
+            <option>All Rounder</option>
+            <option>Anand Aur Anand</option>
+            <option>Andar Baahar</option>
+            <option>Andhi Gali</option>
+            <option>Asha Jyoti</option>
+            <option>Awaaz</option>
+            <option>Bhavna</option>
+            <option>Thayillamal Nannilai</option>
+            <option>Dharm Aur Qanoon</option>
+            <option>Bindiya Chamkegi</option>
+            <option>Boxer</option>
+            <option>Duniya</option>
+            <option>Ek Nai Paheli</option>
+            <option>Haisiyat</option>
+            <option>Gangvaa</option>
+            <option>Hanste Khelte</option>
+            <option>Inquilaab</option>
+            <option>Holi</option>
+            <option>Insaaf Kaun Karega</option>
+            <option>Jaag Utha Insan</option>
+            <option>Jagir</option>
+            <option>Jawaani</option>
+            <option>Jeene Nahi Doonga</option>
+            <option>John Jani Janardhan</option>
+            <option>Jhutha Sach</option>
+            <option>Kamla</option>
+            <option>Karishmaa</option>
+            <option>Kasam Paida Karne Wale Ki</option>
+            <option>Khandhar</option>
+            <option>Laila</option>
+            <option>Hip Hip Hurray</option>
+            <option>Ghar Ek Mandir</option>
+            <option>Mera Faisla</option>
+            <option>Lakhon Ki Baat</option>
+            <option>Lorie</option>
+            <option>Love Marriage</option>
+            <option>Mashaal</option>
+            <option>Meraa Dost Meraa Dushman</option>
+            <option>Meri Adalat</option>
+            <option>Mohan Joshi Hazir Ho!</option>
+            <option>Maqsad</option>
+            <option>Naya Kadam</option>
+            <option>Paroma</option>
+            <option>Paar</option>
+            <option>Phulwari</option>
+            <option>Pyasa Shaitan</option>
+            <option>Purana Mandir</option>
+            <option>Qaidi</option>
+            <option>Raaj Tilak</option>
+            <option>Raavan</option>
+            <option>Rakta Bandhan</option>
+            <option>Saaransh</option>
+            <option>Sasural</option>
+            <option>Seepeeyan</option>
+            <option>Sharara</option>
+            <option>Sohni Mahiwal</option>
+            <option>Sunny</option>
+            <option>Tarang</option>
+            <option>Party</option>
+            <option>Yaadgaar</option>
+            <option>Teri Bahon Mein</option>
+            <option>Utsav</option>
+            <option>Wanted: Dead or Alive</option>
+            <option>Waqt Ki Pukar</option>
+            <option>Sharaabi</option>
+            <option>Tarkeeb</option>
+            <option>Yeh Desh</option>
+            <option>Yeh Ishq Nahin Aasaan</option>
+            <option>Zakhmi Sher</option>
+            <option>Agar Tum Na Hote</option>
+            <option>Zameen Aasmaan</option>
+            <option>Achha Bura</option>
+            <option>Tohfa</option>
+            <option>Andhaa Kaanoon</option>
+            <option>Arohan</option>
+            <option>Arpan</option>
+            <option>Avtaar</option>
+            <option>Bade Dil Wala</option>
+            <option>Bandhan Kuchchey Dhaagon Ka</option>
+            <option>Bekaraar</option>
+            <option>Betaab</option>
+            <option>Ardh Satya</option>
+            <option>Coolie</option>
+            <option>Chor Police</option>
+            <option>Ek Baar Chale Aao</option>
+            <option>Daulat Ke Dushman</option>
+            <option>Doosri Dulhan</option>
+            <option>Faraib</option>
+            <option>Durdesh</option>
+            <option>Hero</option>
+            <option>Hum Se Hai Zamana</option>
+            <option>Jaane Bhi Do Yaaro</option>
+            <option>Jeet Hamaari</option>
+            <option>Justice Chaudhury</option>
+            <option>Karate</option>
+            <option>Himmatwala</option>
+            <option>Kissi Se Na Kehna</option>
+            <option>Lalach</option>
+            <option>Katha</option>
+            <option>Log Kya Kahenge</option>
+            <option>Kalaakaar</option>
+            <option>Lovers</option>
+            <option>Jaani Dost</option>
+            <option>Mahaan</option>
+            <option>Main Awara Hoon</option>
+            <option>Mandi</option>
+            <option>Masoom</option>
+            <option>Mazdoor</option>
+            <option>Mujhe Insaaf Chahiye</option>
+            <option>Nastik</option>
+            <option>Mawaali</option>
+            <option>Naukar Biwi Ka</option>
+            <option>Pasand Apni Apni</option>
+            <option>Prem Tapasya</option>
+            <option>Pukar</option>
+            <option>Qayamat</option>
+            <option>Rishta Kagaz Ka</option>
+            <option>Romance</option>
+            <option>Rang Birangi</option>
+            <option>Sadma</option>
+            <option>Shubh Kaamna</option>
+            <option>Sookha</option>
+            <option>Taqdeer</option>
+            <option>Woh Jo Hasina</option>
+            <option>Souten</option>
+            <option>Woh 7 Din</option>
+            <option>Nishaan</option>
+            <option>Zara Si Zindagi</option>
+            <option>Aadat Se Majboor</option>
+            <option>Aadharshila</option>
+            <option>Aagman</option>
+            <option>Aamne Samne</option>
+            <option>Angoor</option>
+            <option>Anokha Bandhan</option>
+            <option>Aparoopa</option>
+            <option>Apna Bana Lo</option>
+            <option>Apradhi Kaun?</option>
+            <option>Arth</option>
+            <option>Ashanti</option>
+            <option>Ayaash</option>
+            <option>Baawri</option>
+            <option>Badle Ki Aag</option>
+            <option>Baghavat</option>
+            <option>Bazaar</option>
+            <option>Bemisal</option>
+            <option>Bezubaan</option>
+            <option>Ormakal Marikkumo?</option>
+            <option>Dard Ka Rishta</option>
+            <option>Bheegi Palkein</option>
+            <option>Daulat</option>
+            <option>Chorni</option>
+            <option>Deedar-E-Yaar</option>
+            <option>Desh Premee</option>
+            <option>Dharam Kanta</option>
+            <option>Dial 100</option>
+            <option>Dil-E-Nadaan</option>
+            <option>Do Dishayen</option>
+            <option>Do Ustad</option>
+            <option>Ghazab</option>
+            <option>Farz Aur Kanoon</option>
+            <option>Dulha Bikta Hai</option>
+            <option>Gopichand Jasoos</option>
+            <option>Haathkadi</option>
+            <option>Hamari Bahu Alka</option>
+            <option>Insaan</option>
+            <option>Jaanwar</option>
+            <option>Johny I Love You</option>
+            <option>Khud-Daar</option>
+            <option>Jeeo Aur Jeene Do</option>
+            <option>Kaamchor</option>
+            <option>Jeevan Dhaara</option>
+            <option>Disco Dancer</option>
+            <option>Main Intequam Loonga</option>
+            <option>Maine Jeena Seekh Liya</option>
+            <option>Lakshmi</option>
+            <option>Meharbaani</option>
+            <option>Mehndi Rang Layegi</option>
+            <option>Namkeen</option>
+            <option>Nadiya Ke Paar</option>
+            <option>Namak Halaal</option>
+            <option>Nikaah</option>
+            <option>Prem Rog</option>
+            <option>Raaste Pyar Ke</option>
+            <option>Rajput</option>
+            <option>Samraat</option>
+            <option>Saath Saath</option>
+            <option>Sanam Teri Kasam</option>
+            <option>Satte Pe Satta</option>
+            <option>Sawaal</option>
+            <option>Shakti</option>
+            <option>Shaukeen</option>
+            <option>Shiv Charan</option>
+            <option>Sitam</option>
+            <option>Shriman Shrimati</option>
+            <option>Star</option>
+            <option>Sun Sajna</option>
+            <option>Suraag</option>
+            <option>Taqdeer Ka Badshah</option>
+            <option>Swami Dada</option>
+            <option>Teesri Aankh</option>
+            <option>Teri Kasam</option>
+            <option>Umbartha</option>
+            <option>Ustadi Ustad Se</option>
+            <option>Vijeta</option>
+            <option>Vidhaata</option>
+            <option>Yeh Nazdeekiyan</option>
+            <option>Yeh To Kamaal Ho Gaya</option>
+            <option>Yeh Vaada Raha</option>
+            <option>Chashme Buddoor</option>
+            <option>Chehre Pe Chehra</option>
+            <option>Dard (Conflict of Emotions)</option>
+            <option>Dhanwan</option>
+            <option>Dhuan</option>
+            <option>Ek Hi Bhool</option>
+            <option>Fiffty Fiffty</option>
+            <option>Ghamandee</option>
+            <option>Ghungroo Ki Awaaz</option>
+            <option>Harjaee</option>
+            <option>Hum Se Badkar Kaun</option>
+            <option>Jail Yatra</option>
+            <option>Jeene Ki Arzoo</option>
+            <option>Jiyo To Aise Jiyo</option>
+            <option>Jwaala Daaku</option>
+            <option>Jyoti</option>
+            <option>Kalyug</option>
+            <option>Kaalia</option>
+            <option>Kachche Heere</option>
+            <option>Katilon Ke Kaatil</option>
+            <option>Khoon Ka Rishta</option>
+            <option>Krodhi</option>
+            <option>Khuda Kasam</option>
+            <option>Kudrat</option>
+            <option>Laawaris</option>
+            <option>Laparwah</option>
+            <option>Love Story</option>
+            <option>Maan Gaye Ustaad</option>
+            <option>Kranti</option>
+            <option>Main Aur Mera Haathi</option>
+            <option>Plot No. 5</option>
+            <option>Nakhuda</option>
+            <option>Meri Aawaz Suno</option>
+            <option>Naseeb</option>
+            <option>Naram Garam</option>
+            <option>Kahani Ek Chor Ki</option>
+            <option>Pyaasa Sawan</option>
+            <option>Raaz</option>
+            <option>Professor Pyarelal</option>
+            <option>Prem Geet</option>
+            <option>Sadgati</option>
+            <option>Rocky</option>
+            <option>Waqt Ki Deewar</option>
+            <option>Sansani: The Sensation</option>
+            <option>Sahhas</option>
+            <option>Shakka</option>
+            <option>Tajurba</option>
+            <option>Umrao Jaan</option>
+            <option>Wardaat</option>
+            <option>Yaarana</option>
+            <option>Silsila</option>
+            <option>Aap To Aise Na The</option>
+            <option>Aanchal</option>
+            <option>Zamaane Ko Dikhana Hai</option>
+            <option>Aap Ke Deewane</option>
+            <option>Aasha</option>
+            <option>Abdullah</option>
+            <option>Albert Pinto Ko Gussa Kyon Ata Hai</option>
+            <option>Aakrosh</option>
+            <option>Alibaba Aur 40 Chor</option>
+            <option>Satah Se Uthata Aadmi</option>
+            <option>Apne Paraye</option>
+            <option>Be-Reham</option>
+            <option>Bandish</option>
+            <option>Bombay 405 Miles</option>
+            <option>Chambal Ki Kasam</option>
+            <option>Choron Ki Baaraat</option>
+            <option>Chunaoti</option>
+            <option>Dhan Daulat</option>
+            <option>Do Aur Do Paanch</option>
+            <option>Do Premee</option>
+            <option>Dostana</option>
+            <option>Ek Baar Kaho</option>
+            <option>Gehrayee</option>
+            <option>Garam Khoon</option>
+            <option>Guest House</option>
+            <option>Hum Paanch</option>
+            <option>Jal Mahal</option>
+            <option>Insaf Ka Tarazu</option>
+            <option>Jazbaat</option>
+            <option>Judaai</option>
+            <option>Jwalamukhi</option>
+            <option>Karz</option>
+            <option>Kali Ghata</option>
+            <option>Jyoti Bane Jwala</option>
+            <option>Khanjar</option>
+            <option>Khubsoorat</option>
+            <option>Neeyat</option>
+            <option>Lootmaar</option>
+            <option>Man Pasand</option>
+            <option>Nishana</option>
+            <option>Patita</option>
+            <option>Khwab</option>
+            <option>Kismet</option>
+            <option>Pyaara Dushman</option>
+            <option>Payal Ki Jhankaar</option>
+            <option>Qurbani</option>
+            <option>Phir Wohi Raat</option>
+            <option>Ram Balram</option>
+            <option>Red Rose</option>
+            <option>Saboot</option>
+            <option>Sitara</option>
+            <option>Sparsh</option>
+            <option>Shaan</option>
+            <option>Sau Din Saas Ke</option>
+            <option>The Burning Train</option>
+            <option>Takkar</option>
+            <option>Taxi Chor</option>
+            <option>The Naxalites</option>
+            <option>Thodisi Bewafaii</option>
+            <option>Unees-Bees</option>
+            <option>Yari Dushmani</option>
+            <option>Aakhri Kasam</option>
+            <option>Aatish</option>
+            <option>Ahinsa</option>
+            <option>Ahsaas</option>
+            <option>Amar Deep</option>
+            <option>Aur Kaun?</option>
+            <option>Bagula Bhagat</option>
+            <option>Baton Baton Mein</option>
+            <option>Bhayaanak</option>
+            <option>Dhongee</option>
+            <option>Bin Phere Hum Tere</option>
+            <option>Dada</option>
+            <option>Dil Kaa Heera</option>
+            <option>Do Ladke Dono Kadke</option>
+            <option>Do Shikaari</option>
+            <option>Dooriyaan</option>
+            <option>Duniya Meri Jeb Mein</option>
+            <option>Gautam Govinda</option>
+            <option>Alavuddinum Athbutha Vilakkum</option>
+            <option>Gol Maal</option>
+            <option>Gopal Krishna</option>
+            <option>The Great Gambler</option>
+            <option>Griha Pravesh</option>
+            <option>Hamare Tumhare</option>
+            <option>Har Har Gange</option>
+            <option>Heera-Moti</option>
+            <option>Hum Tere Ashiq Hain</option>
+            <option>Jaan-E-Bahaar</option>
+            <option>Jaani Dushman</option>
+            <option>Janta Hawaldar</option>
+            <option>Jeena Yahan</option>
+            <option>Jhoota Kahin Ka</option>
+            <option>Jurmana</option>
+            <option>Kaala Patthar</option>
+            <option>Kartavya</option>
+            <option>Khandaan</option>
+            <option>Lahu Ke Do Rang</option>
+            <option>Lok Parlok</option>
+            <option>Maan Apmaan</option>
+            <option>Magroor</option>
+            <option>Manzil</option>
+            <option>Meera</option>
+            <option>Meri Biwi Ki Shaadi</option>
+            <option>Mr. Natwarlal</option>
+            <option>Muqabla</option>
+            <option>Nagin Aur Suhagan</option>
+            <option>Nauker</option>
+            <option>Noorie</option>
+            <option>Prem Bandhan</option>
+            <option>Prem Vivah</option>
+            <option>Raadha Aur Seeta</option>
+            <option>Ratnadeep</option>
+            <option>Saanch Ko Aanch Nahin</option>
+            <option>Salaam Memsaab</option>
+            <option>Sampark</option>
+            <option>Sargam</option>
+            <option>Sarkari Mehmaan</option>
+            <option>Sawan Ko Aane Do</option>
+            <option>Shaayad</option>
+            <option>Shikshaa</option>
+            <option>Shodh</option>
+            <option>Solva Sawan</option>
+            <option>Suhaag</option>
+            <option>Sunayana</option>
+            <option>Surakksha</option>
+            <option>Tarana</option>
+            <option>Tere Pyaar Mein</option>
+            <option>Aahuti</option>
+            <option>Aakhri Daku</option>
+            <option>Amar Shakti</option>
+            <option>Anjane Mein</option>
+            <option>Ankhiyon Ke Jharokhon Se</option>
+            <option>Arvind Desai Ki Ajeeb Dastaan</option>
+            <option>Apna Khoon</option>
+            <option>Atithee</option>
+            <option>Azaad</option>
+            <option>Badaltey Rishtey</option>
+            <option>Besharam</option>
+            <option>Bhola Bhala</option>
+            <option>Chakravyuha</option>
+            <option>Chor Ho To Aisa</option>
+            <option>Chor Ke Ghar Chor</option>
+            <option>College Girl</option>
+            <option>Do Musafir</option>
+            <option>Des Pardes</option>
+            <option>Damaad</option>
+            <option>Daku Aur Jawan</option>
+            <option>Devata</option>
+            <option>Dillagi</option>
+            <option>Don</option>
+            <option>Gaman</option>
+            <option>Dil Se Mile Dil</option>
+            <option>Hullabaloo Over Georgie and Bonnie's Pictures</option>
+            <option>Ganga Ki Saugand</option>
+            <option>Heeralal Pannalal</option>
+            <option>Ghar</option>
+            <option>Karmayogi</option>
+            <option>Kasme Vaade</option>
+            <option>Khatta Meetha</option>
+            <option>Khoon Ka Badla Khoon</option>
+            <option>Khoon Ki Pukaar</option>
+            <option>Main Tulsi Tere Aangan Ki</option>
+            <option>Anugraham</option>
+            <option>Mera Rakshak</option>
+            <option>Muqaddar Ka Sikandar</option>
+            <option>Nasbandi</option>
+            <option>Naya Daur</option>
+            <option>Phaansi</option>
+            <option>Phool Khile Hain Gulshan Gulshan</option>
+            <option>Phandebaaz</option>
+            <option>Ram Kasam</option>
+            <option>Saajan Bina Suhagan</option>
+            <option>Safed Haathi</option>
+            <option>Shalimar</option>
+            <option>Sone Ka Dil Lohe Ke Haath</option>
+            <option>Toote Khilone</option>
+            <option>Swarg Narak</option>
+            <option>Trishna</option>
+            <option>Aadmi Sadak Ka</option>
+            <option>Tumhare Liye</option>
+            <option>Vishwanath</option>
+            <option>Aakhri Goli</option>
+            <option>Aafat</option>
+            <option>Satyam Shivam Sundaram: Love Sublime</option>
+            <option>Aaina</option>
+            <option>Aap Ki Khatir</option>
+            <option>Aashiq Hoon Baharon Ka</option>
+            <option>Adalat</option>
+            <option>Abhi To Jee Lein</option>
+            <option>Ab Kya Hoga</option>
+            <option>Adha Din Adhi Raat</option>
+            <option>Agar... If</option>
+            <option>Agent Vinod</option>
+            <option>Alaap</option>
+            <option>Amaanat</option>
+            <option>Alibaba Marjinaa</option>
+            <option>Ananda Ashram</option>
+            <option>Anurodh</option>
+            <option>Apnapan</option>
+            <option>Chaani</option>
+            <option>Chacha Bhatija</option>
+            <option>Chakkar Pe Chakkar</option>
+            <option>Chala Murari Hero Banne</option>
+            <option>Chalta Purza</option>
+            <option>Chandi Sona</option>
+            <option>Charandas</option>
+            <option>Chhailla Babu</option>
+            <option>Chor Sipahee</option>
+            <option>Daku Aur Mahatma</option>
+            <option>Darling Darling</option>
+            <option>Dharam Veer</option>
+            <option>Dildaar</option>
+            <option>Do Sholay</option>
+            <option>Doosara Aadmi</option>
+            <option>Amar Akbar Anthony</option>
+            <option>Bhumika</option>
+            <option>Ek Hi Raasta</option>
+            <option>Dulhan Wahi Jo Piya Man Bhaaye</option>
+            <option>Dream Girl</option>
+            <option>Farishta Ya Qatil</option>
+            <option>Haiwan</option>
+            <option>Gharaonda</option>
+            <option>Hatyara</option>
+            <option>Hira Aur Patthar</option>
+            <option>Hum Kisise Kum Naheen</option>
+            <option>Immaan Dharam</option>
+            <option>Inkaar</option>
+            <option>Jadu Tona</option>
+            <option>Jallian Wala Bagh</option>
+            <option>Jai-Vijay</option>
+            <option>Kachcha Chor</option>
+            <option>Kalabaaz</option>
+            <option>Karm</option>
+            <option>Kasum Khoon Ki</option>
+            <option>Khoon Pasina</option>
+            <option>Khel Khilari Ka</option>
+            <option>Kinara</option>
+            <option>Kissaa Kursee Kaa</option>
+            <option>Kitaab</option>
+            <option>Kotwal Saab</option>
+            <option>Maha Badmaash</option>
+            <option>Mama Bhanja</option>
+            <option>Mukti</option>
+            <option>Paapi</option>
+            <option>Paheli</option>
+            <option>Palkon Ki Chhaon Mein</option>
+            <option>Pandit Aur Pathan</option>
+            <option>Parvarish</option>
+            <option>Safed Jhoot</option>
+            <option>Priyatama</option>
+            <option>Manmatha Leelai</option>
+            <option>Ram Bharose</option>
+            <option>Shatranj Ke Khilari</option>
+            <option>Saheb Bahadur</option>
+            <option>Shankar Hussain</option>
+            <option>Taxi Taxie</option>
+            <option>Shirdi Ke Sai Baba</option>
+            <option>Tyaag</option>
+            <option>Yaaron Ka Yaar</option>
+            <option>Yehi Hai Zindagi</option>
+            <option>Aaj Ka Mahaatma</option>
+            <option>Aaj Ka Ye Ghar</option>
+            <option>Aap Beati</option>
+            <option>Arjun Pandit</option>
+            <option>Bairaag</option>
+            <option>Bajrangbali</option>
+            <option>Swami</option>
+            <option>Balika Badhu</option>
+            <option>Barood</option>
+            <option>Bhala Manus</option>
+            <option>Bhanwar</option>
+            <option>Chalte Chalte</option>
+            <option>Bullet</option>
+            <option>Bundal Baaz</option>
+            <option>Charas</option>
+            <option>Chhoti Si Baat</option>
+            <option>Chitchor</option>
+            <option>Deewaangee</option>
+            <option>Do Anjaane</option>
+            <option>Dus Numbri</option>
+            <option>Ek Se Badhkar Ek</option>
+            <option>Ginny Aur Johny</option>
+            <option>Hera Pheri</option>
+            <option>Jaaneman</option>
+            <option>Jeevan Jyoti</option>
+            <option>Kabeela</option>
+            <option>Kabhie Kabhie</option>
+            <option>Kalicharan</option>
+            <option>Khaan Dost</option>
+            <option>Lagaam</option>
+            <option>Laila Majnu</option>
+            <option>Fakira</option>
+            <option>Maa</option>
+            <option>Maha Chor</option>
+            <option>Mazdoor Zindabaad</option>
+            <option>Mehbooba</option>
+            <option>Manthan</option>
+            <option>Naach Uthe Sansaar</option>
+            <option>Mrigayaa</option>
+            <option>Nagin</option>
+            <option>Nehle Pe Dehla</option>
+            <option>Raakhi Aur Rifle</option>
+            <option>Rangila Ratan</option>
+            <option>Sabse Bada Rupaiya</option>
+            <option>Sajjo Rani</option>
+            <option>Shankar Shambhu</option>
+            <option>Shaque</option>
+            <option>Sharafat Chhod Di Maine</option>
+            <option>Seeta Kalyanam</option>
+            <option>Tapasya</option>
+            <option>Udhar Ka Sindur</option>
+            <option>Zindagi</option>
+            <option>Aaja Sanam</option>
+            <option>Aakhri Dao</option>
+            <option>Aakraman</option>
+            <option>Aandhi</option>
+            <option>Anari</option>
+            <option>Anokha</option>
+            <option>Apne Rang Hazaar</option>
+            <option>Apne Dushman</option>
+            <option>Andhera</option>
+            <option>Balak Aur Janwar</option>
+            <option>Chaitali</option>
+            <option>Shankar Dada</option>
+            <option>Dafaa 302: Indian Penal Code Section 302 (Section of Murder)</option>
+            <option>Dharmatma</option>
+            <option>Chori Mera Kaam</option>
+            <option>Chupke Chupke</option>
+            <option>Deewaar</option>
+            <option>Dharam Karam</option>
+            <option>Charandas Chor</option>
+            <option>Amanush</option>
+            <option>Dhoti Lota Aur Chowpatty</option>
+            <option>Do Jasoos</option>
+            <option>Do Jhoot</option>
+            <option>Do Thug</option>
+            <option>Dulhan</option>
+            <option>Ek Mahal Ho Sapno Ka</option>
+            <option>Faraar</option>
+            <option>Jaan Hazir Hai</option>
+            <option>Himalay Se Ooncha</option>
+            <option>Geet Gaata Chal</option>
+            <option>Jaggu</option>
+            <option>Jai Santoshi Maa</option>
+            <option>Julie</option>
+            <option>Kaagaz Ki Nao</option>
+            <option>Kaala Sona</option>
+            <option>Kahte Hain Mujhko Raja</option>
+            <option>Khel Khel Mein</option>
+            <option>Lafange</option>
+            <option>Khushboo</option>
+            <option>Mausam</option>
+            <option>Mazaaq</option>
+            <option>Mere Sajna</option>
+            <option>Mili</option>
+            <option>Natak</option>
+            <option>Nishant</option>
+            <option>Ponga Pandit</option>
+            <option>Pratiggya</option>
+            <option>Rafoo Chakkar</option>
+            <option>Raftaar</option>
+            <option>Rani Aur Lalpari</option>
+            <option>Saazish</option>
+            <option>Salaakhen</option>
+            <option>Prem Kahani</option>
+            <option>Sewak</option>
+            <option>Sanyasi</option>
+            <option>Sunehra Sansar</option>
+            <option>Uljhan</option>
+            <option>Umar Qaid</option>
+            <option>Vardaan</option>
+            <option>Vandana</option>
+            <option>Warrant</option>
+            <option>Zakhmee</option>
+            <option>Zameer</option>
+            <option>Zinda Dil</option>
+            <option>Zorro</option>
+            <option>27 Down</option>
+            <option>36 Ghante</option>
+            <option>5 Rifles</option>
+            <option>Aap Ki Kasam</option>
+            <option>Aarop</option>
+            <option>Ajanabee</option>
+            <option>Aavishkar</option>
+            <option>Amir Garib</option>
+            <option>Ankur</option>
+            <option>Azad Mohabbat</option>
+            <option>Badhti Ka Naam Dadhi</option>
+            <option>Call Girl</option>
+            <option>Benaam</option>
+            <option>Bidaai</option>
+            <option>Charitraheen</option>
+            <option>Chhote Sarkar</option>
+            <option>Chor Chor</option>
+            <option>Chor Machaye Shor</option>
+            <option>Chorus</option>
+            <option>Chowkidar</option>
+            <option>Dil Diwana</option>
+            <option>Doosri Sita</option>
+            <option>Dost</option>
+            <option>Duniya Ka Mela</option>
+            <option>Farebi</option>
+            <option>Geetaa Mera Naam</option>
+            <option>Goonj</option>
+            <option>Haath Ki Safai</option>
+            <option>Hamrahi</option>
+            <option>Hanuman Vijay</option>
+            <option>Hawas</option>
+            <option>Humshakal</option>
+            <option>Insaaniyat</option>
+            <option>International Crook</option>
+            <option>Ishq Ishq Ishq</option>
+            <option>Jadu Ka Shankh</option>
+            <option>Jeevan Sangram</option>
+            <option>Kasauti</option>
+            <option>Khhotte Sikkay</option>
+            <option>Khoon Ki Keemat</option>
+            <option>Kisan Aur Bhagwan</option>
+            <option>Kora Kagaz</option>
+            <option>Kunwara Baap</option>
+            <option>Majboor</option>
+            <option>Madhosh</option>
+            <option>Manzilein Aur Bhi Hain</option>
+            <option>Mere Saath Chal</option>
+            <option>Manoranjan</option>
+            <option>Resham Ki Dori</option>
+            <option>Naya Din Nai Raat</option>
+            <option>Phir Kab Milogi</option>
+            <option>Pran Jaye Par Vachan Na Jaye</option>
+            <option>Pocket Maar</option>
+            <option>Rajnigandha</option>
+            <option>Roti</option>
+            <option>Roti Kapada Aur Makaan</option>
+            <option>Sagina</option>
+            <option>Parinay</option>
+            <option>Aaj Ki Taaza Khabar</option>
+            <option>Zehreela Insaan</option>
+            <option>Abhimaan</option>
+            <option>Achanak</option>
+            <option>Agni Rekha</option>
+            <option>Anokhi Ada</option>
+            <option>Anhonee</option>
+            <option>Anamika</option>
+            <option>Bada Kabutar</option>
+            <option>Banarasi Babu</option>
+            <option>Bandhe Haath</option>
+            <option>Barkha Bahar</option>
+            <option>Black Mail</option>
+            <option>Bobby</option>
+            <option>Chhalia</option>
+            <option>Aa Gale Lag Jaa</option>
+            <option>Do Phool</option>
+            <option>Dharma</option>
+            <option>Chhupa Rustam</option>
+            <option>Dhamkee</option>
+            <option>Daag: A Poem of Love</option>
+            <option>Dhund</option>
+            <option>Gehri Chaal</option>
+            <option>Duvidha</option>
+            <option>Ek Mutthi Aasmaan</option>
+            <option>Ek Kunwari Ek Kunwara</option>
+            <option>Gaai Aur Gori</option>
+            <option>Ek Nari Do Roop</option>
+            <option>Garm Hava</option>
+            <option>Ghulam Begam Badshah</option>
+            <option>Jaise Ko Taisa</option>
+            <option>Jalte Badan</option>
+            <option>Joshila</option>
+            <option>Jheel Ke Us Paar</option>
+            <option>Jwar Bhata</option>
+            <option>Kahani Hum Sab Ki</option>
+            <option>Hanste Zakhm</option>
+            <option>Honeymoon</option>
+            <option>Hindustan Ki Kasam</option>
+            <option>Heera Panna</option>
+            <option>Insaaf</option>
+            <option>Kahani Kismat Ki</option>
+            <option>Kashmakash</option>
+            <option>Keemat</option>
+            <option>Jugnu</option>
+            <option>Khoon Khoon</option>
+            <option>Loafer</option>
+            <option>Manchali</option>
+            <option>Mehmaan</option>
+            <option>Mera Desh Mera Dharam</option>
+            <option>Nafrat</option>
+            <option>Namak Haraam</option>
+            <option>Naya Nasha</option>
+            <option>Rickshawala</option>
+            <option>Saudagar</option>
+            <option>Shareef Budmaash</option>
+            <option>Yaadon Ki Baaraat</option>
+            <option>Zanjeer</option>
+            <option>Aan Baan</option>
+            <option>Aankh Micholi</option>
+            <option>Aankhon Aankhon Mein</option>
+            <option>Amar Prem</option>
+            <option>Anokhi Pehchan</option>
+            <option>Annadata</option>
+            <option>Anokha Daan</option>
+            <option>Anokha Milan</option>
+            <option>Apna Desh</option>
+            <option>Anuraag</option>
+            <option>Apradh</option>
+            <option>Babul Ki Galiyaan</option>
+            <option>Baharon Phool Barsao</option>
+            <option>Bansi Birju</option>
+            <option>Bawarchi</option>
+            <option>Be-Imaan</option>
+            <option>Bees Saal Pehle</option>
+            <option>Bhai Ho To Aisa</option>
+            <option>Bombay to Goa</option>
+            <option>Dastaan</option>
+            <option>Dharkan</option>
+            <option>Dil Daulat Duniya</option>
+            <option>Dil Ka Raaja</option>
+            <option>Ek Bar Mooskura Do</option>
+            <option>Do Gaz Zameen Ke Neeche</option>
+            <option>Do Yaar</option>
+            <option>Do Chor</option>
+            <option>Double Cross</option>
+            <option>Dushman</option>
+            <option>Ek Adhuri Kahani</option>
+            <option>Ek Bechara</option>
+            <option>Ek Hasina Do Diwane</option>
+            <option>Ek Khiladi Bawan Pattey</option>
+            <option>Ek Nazar</option>
+            <option>Gaon Hamara Shaher Tumhara</option>
+            <option>Garam Masala</option>
+            <option>Gomti Ke Kinare</option>
+            <option>Gora Aur Kala</option>
+            <option>Haar Jeet</option>
+            <option>Do Bachche Dus Haath</option>
+            <option>Hari Darshan</option>
+            <option>Jangal Mein Mangal</option>
+            <option>Jaanwar Aur Insaan</option>
+            <option>Jawani Diwani</option>
+            <option>Joroo Ka Ghulam</option>
+            <option>Lalkar (The Challenge)</option>
+            <option>Maalik</option>
+            <option>Maya Darpan</option>
+            <option>Mere Bhaiya</option>
+            <option>Milap</option>
+            <option>Mere Jeevan Saathi</option>
+            <option>Mome Ki Gudiya</option>
+            <option>Koshish</option>
+            <option>Pakeezah</option>
+            <option>Parichay</option>
+            <option>Piya Ka Ghar</option>
+            <option>Pyaar Diwana</option>
+            <option>Raampur Ka Lakshman</option>
+            <option>Raja Jani</option>
+            <option>Raaste Kaa Patthar</option>
+            <option>Rakhi Aur Hathkadi</option>
+            <option>Rani Mera Naam</option>
+            <option>Rivaaj</option>
+            <option>Roop Tera Mastana</option>
+            <option>Sa-Re-Ga-Ma-Pa</option>
+            <option>Sabse Bada Sukh</option>
+            <option>Sazaa</option>
+            <option>Samadhi</option>
+            <option>Sanjog</option>
+            <option>Seeta Aur Geeta</option>
+            <option>Shaadi Ke Baad</option>
+            <option>Shehzada</option>
+            <option>Tangewala</option>
+            <option>Victoria No. 203</option>
+            <option>Yeh Gulistan Hamara</option>
+            <option>Zameen Aasmaan</option>
+            <option>Subha-O-Sham</option>
+            <option>Zindagi Zindagi</option>
+            <option>Zaroorat</option>
+            <option>Shor</option>
+            <option>Anand</option>
+            <option>Aap Aye Bahaar Ayee</option>
+            <option>Albela</option>
+            <option>Adhikar</option>
+            <option>Andaz</option>
+            <option>Anubhav</option>
+            <option>Balidaan</option>
+            <option>Banphool</option>
+            <option>Bikhare Moti</option>
+            <option>Beharoopia</option>
+            <option>Buddha Mil Gaya</option>
+            <option>Chaahat</option>
+            <option>Do Raha</option>
+            <option>Do Boond Pani</option>
+            <option>Chhoti Bahu</option>
+            <option>Door Ka Raahi</option>
+            <option>Ek Nari Ek Brahmachari</option>
+            <option>Badnam Farishte</option>
+            <option>Caravan</option>
+            <option>Haathi Mere Saathi</option>
+            <option>Elaan</option>
+            <option>Ek Paheli</option>
+            <option>Ganga Tera Pani Amrit</option>
+            <option>Guddi</option>
+            <option>Gambler</option>
+            <option>HarÃƒÂ© Rama HarÃƒÂ© Krishna</option>
+            <option>Haseenon Ka Devata</option>
+            <option>Hulchul</option>
+            <option>Hum Tum Aur Woh</option>
+            <option>Hungama</option>
+            <option>Jaane-Anjaane</option>
+            <option>Jai Bangladesh</option>
+            <option>Jawan Muhabat</option>
+            <option>Johar Mehmood in Hong Kong</option>
+            <option>Jal Bin Machhli Nritya Bin Bijli</option>
+            <option>Jwala</option>
+            <option>Kal Aaj Aur Kal</option>
+            <option>Kangan</option>
+            <option>Kathputli</option>
+            <option>Khoj</option>
+            <option>Ladki Pasand Hai</option>
+            <option>Lakhon Me Ek</option>
+            <option>Lal Patthar</option>
+            <option>Main Sunder Hoon</option>
+            <option>Man Mandir</option>
+            <option>Kati Patang</option>
+            <option>Mehboob Ki Mehndi</option>
+            <option>Mela</option>
+            <option>Memsaab</option>
+            <option>Maryada</option>
+            <option>Mere Apne</option>
+            <option>Mera Gaon Mera Desh</option>
+            <option>Naya Zamana</option>
+            <option>Paras</option>
+            <option>Patanga</option>
+            <option>Parde Ke Peechey</option>
+            <option>Paraya Dhan</option>
+            <option>Parwana</option>
+            <option>Preet Ki Dori</option>
+            <option>Preetam</option>
+            <option>Rakhwala</option>
+            <option>Pyar Ki Kahani</option>
+            <option>Reshma Aur Shera</option>
+            <option>Sansar</option>
+            <option>Seema</option>
+            <option>Sharmeelee</option>
+            <option>Shri Krishna Leela</option>
+            <option>Tere Mere Sapne</option>
+            <option>Tulsi Vivah</option>
+            <option>Upaasna</option>
+            <option>Uphaar</option>
+            <option>Johny Mera Naam</option>
+            <option>Sachaa Jhutha</option>
+            <option>Aan Milo Sajna</option>
+            <option>Purab Aur Pachhim</option>
+            <option>Safar</option>
+            <option>Humjoli</option>
+            <option>The Train</option>
+            <option>Khilona</option>
+            <option>Kab? Kyoon? Aur Kahan?</option>
+            <option>Jeevan Mrityu</option>
+            <option>Tum Haseen Main Jawan</option>
+            <option>Pehchan</option>
+            <option>Gopi</option>
+            <option>Ganwaar</option>
+            <option>Sharafat</option>
+            <option>Sawan Bhadon</option>
+            <option>Abhinetri</option>
+            <option>Aansoo Aur Muskan</option>
+            <option>Rootha Na Karo</option>
+            <option>Saas Bhi Kabhi Bahu Thi</option>
+            <option>Suhana Safar</option>
+            <option>Ghar Ghar Ki Kahani</option>
+            <option>Geet</option>
+            <option>Heer Raanjha</option>
+            <option>Mastana</option>
+            <option>Devi</option>
+            <option>Bhai Bhai</option>
+            <option>Aag Aur Daag</option>
+            <option>Bachpan</option>
+            <option>Bhai-Bhai</option>
+            <option>Chetna</option>
+            <option>Dastak</option>
+            <option>Dharti</option>
+            <option>Ek Nanhi Munni Ladki Thi</option>
+            <option>Gunah Aur Kanoon</option>
+            <option>Himmat</option>
+            <option>Holi Ayee Re</option>
+            <option>Insaan Aur Shaitan</option>
+            <option>Ishq Par Zor Nahin</option>
+            <option>Jawab</option>
+            <option>Maa Aur Mamta</option>
+            <option>Bombay Talkie</option>
+            <option>Man Ki Aankhen</option>
+            <option>Mera Naam Joker</option>
+            <option>Mere Humsafar</option>
+            <option>Moojrim</option>
+            <option>My Love</option>
+            <option>Naya Raasta</option>
+            <option>Pagla Kahin Ka</option>
+            <option>Pardesi</option>
+            <option>Pavitra Paapi</option>
+            <option>Prem Pujari</option>
+            <option>Puraskar</option>
+            <option>Pushpanjali</option>
+            <option>Raaton Ka Raja</option>
+            <option>Samaj Ko Badal Dalo</option>
+            <option>Yaadgaar</option>
+            <option>Aadmi Aur Insaan</option>
+            <option>Aansoo Ban Gaye Phool</option>
+            <option>Anjaana</option>
+            <option>Anmol Moti</option>
+            <option>Anjan Hai Koyee</option>
+            <option>Badi Didi</option>
+            <option>Bandhan</option>
+            <option>Beti</option>
+            <option>Chanda Aur Bijli</option>
+            <option>Chirag</option>
+            <option>Dharti Kahe Pukarke</option>
+            <option>Do Bhai</option>
+            <option>Aradhana</option>
+            <option>Aya Sawan Jhoom Ke</option>
+            <option>Doli</option>
+            <option>Ek Phool Do Mali</option>
+            <option>Ek Shriman Ek Shrimati</option>
+            <option>The Guru</option>
+            <option>Intaquam</option>
+            <option>Bhuvan Shome</option>
+            <option>Do Raaste</option>
+            <option>Jigri Dost</option>
+            <option>Jahan Pyar Mile</option>
+            <option>Jeene Ki Raah</option>
+            <option>Mahal</option>
+            <option>Ittefaq</option>
+            <option>Mahua</option>
+            <option>Prince</option>
+            <option>Pyar Ka Mausam</option>
+            <option>Pyar Ka Sapna</option>
+            <option>Rahgir</option>
+            <option>Raja Saab</option>
+            <option>Sachaai</option>
+            <option>Sajan</option>
+            <option>Khamoshi</option>
+            <option>Pyar Hi Pyar</option>
+            <option>Shatranj</option>
+            <option>Talash</option>
+            <option>Satyakam</option>
+            <option>Sara Akash</option>
+            <option>Tumse Achha Kaun Hai</option>
+            <option>Vishwas</option>
+            <option>Waris</option>
+            <option>Yakeen</option>
+            <option>Do Kaliyaan</option>
+            <option>Ankhen</option>
+            <option>Saat Hindustani</option>
+            <option>Neel Kamal</option>
+            <option>Shikar</option>
+            <option>Padosan</option>
+            <option>Kanyadaan</option>
+            <option>Brahmachari</option>
+            <option>Aadmi</option>
+            <option>Duniya</option>
+            <option>Aabroo</option>
+            <option>Aashirwad</option>
+            <option>Haseena Maan Jayegi</option>
+            <option>Abhilasha</option>
+            <option>Anokhi Raat</option>
+            <option>Aulad</option>
+            <option>Baazi</option>
+            <option>Baharon Ki Manzil</option>
+            <option>Balram Shri Krishna</option>
+            <option>Bambai Raat Ki Bahon Mein</option>
+            <option>Ek Kali Muskai</option>
+            <option>Do Dooni Char</option>
+            <option>Gauri</option>
+            <option>Humsaya</option>
+            <option>Izzat</option>
+            <option>Jhuk Gaya Aasman</option>
+            <option>Kahin Aur Chal</option>
+            <option>Khilari</option>
+            <option>Kismat</option>
+            <option>Mere Hamdam Mere Dost</option>
+            <option>Mere Huzoor</option>
+            <option>Raja Aur Runk</option>
+            <option>Saathi</option>
+            <option>Sadhu Aur Shaitaan</option>
+            <option>Ek Phool Ek Bhool</option>
+            <option>Sunghursh</option>
+            <option>Teen Bahuraniyan</option>
+            <option>Saraswatichandra</option>
+            <option>Upkar</option>
+            <option>Suhaag Raat</option>
+            <option>Sapnon Ka Saudagar</option>
+            <option>Ram Aur Shyam</option>
+            <option>Farz</option>
+            <option>Aag</option>
+            <option>Shagird</option>
+            <option>Hamraaz</option>
+            <option>Mehrban</option>
+            <option>Patthar Ke Sanam</option>
+            <option>Milan</option>
+            <option>Aman</option>
+            <option>An Evening in Paris</option>
+            <option>Jewel Thief</option>
+            <option>Anita</option>
+            <option>Around the World</option>
+            <option>Aurat</option>
+            <option>Baharon Ke Sapne</option>
+            <option>Bahu Begum</option>
+            <option>Bhakta Prahlada</option>
+            <option>Boond Jo Ban Gayee Moti</option>
+            <option>C.I.D. 909</option>
+            <option>Chand Par Chadayee</option>
+            <option>Chandan Ka Palna</option>
+            <option>Chhoti Si Mulaqat</option>
+            <option>Aamne - Saamne</option>
+            <option>Diwana</option>
+            <option>Dulhan Ek Raat Ki</option>
+            <option>Ghar Ka Chirag</option>
+            <option>Gunahon Ka Devta</option>
+            <option>Hare Kanch Ki Chooriyan</option>
+            <option>Hatey Bazarey</option>
+            <option>Jaal</option>
+            <option>Jab Yaad Kisi Ki Aati Hai</option>
+            <option>Nai Roshni</option>
+            <option>Majhli Didi</option>
+            <option>Naunihal</option>
+            <option>Night in London</option>
+            <option>Noorjehan</option>
+            <option>Raaz</option>
+            <option>Raat Aur Din</option>
+            <option>Wahan Ke Log</option>
+            <option>Woh Koi Aur Hoga</option>
+            <option>Phool Aur Patthar</option>
+            <option>Suraj</option>
+            <option>Mera Saaya</option>
+            <option>Do Badan</option>
+            <option>Aaye Din Bahar Ke</option>
+            <option>Sawan Ki Ghata</option>
+            <option>Teesri Manzil</option>
+            <option>Dus Lakh</option>
+            <option>Pyar Kiye Jaa</option>
+            <option>Anupama</option>
+            <option>Baharen Phir Bhi Aayengi</option>
+            <option>Budtameez</option>
+            <option>Daku Mangal Singh</option>
+            <option>Daadi Maa</option>
+            <option>Devar</option>
+            <option>Amrapali</option>
+            <option>Love in Tokyo</option>
+            <option>UchÃƒÂ» keiji Gyaban</option>
+            <option>Ladki Sahyadri Ki</option>
+            <option>Mohabbat Zindagi Hai</option>
+            <option>Neend Hamari Khwab Tumhare</option>
+            <option>Sagaai</option>
+            <option>Teesri Kasam</option>
+            <option>Yeh Zindagi Kitni Haseen Hai</option>
+            <option>Yeh Raat Phir Na Aaygi</option>
+            <option>Akashdeep</option>
+            <option>Aasmaan Mahal</option>
+            <option>Arzoo</option>
+            <option>Bedaag</option>
+            <option>Bhoot Bungla</option>
+            <option>Chand Aur Suraj</option>
+            <option>Chhoti Chhoti Baatein</option>
+            <option>Guide</option>
+            <option>Himalay Ki Godmein</option>
+            <option>Hum Sab Ustad Hain</option>
+            <option>Janwar</option>
+            <option>Bheegi Raat</option>
+            <option>Johar-Mehmood in Goa</option>
+            <option>Khandan</option>
+            <option>Kaajal</option>
+            <option>Mahabharat</option>
+            <option>Mere Sanam</option>
+            <option>Gumnaam</option>
+            <option>Neela Aakash</option>
+            <option>Nishan</option>
+            <option>Oonche Log</option>
+            <option>Poonam Ki Raat</option>
+            <option>Purnima</option>
+            <option>Jab Jab Phool Khile</option>
+            <option>Rishte Naahte</option>
+            <option>Shaheed</option>
+            <option>Shakespeare-Wallah</option>
+            <option>Sindbad Alibaba and Aladdin</option>
+            <option>Teen Devian</option>
+            <option>Ayee Milan Ki Bela</option>
+            <option>Dosti</option>
+            <option>Ziddi</option>
+            <option>Rajkumar</option>
+            <option>Kashmir Ki Kali</option>
+            <option>Haqeeqat</option>
+            <option>Zindagi</option>
+            <option>April Fool</option>
+            <option>Aao Pyaar Karen</option>
+            <option>Aap Ki Parchhaiyan</option>
+            <option>Apne Huye Paraye</option>
+            <option>Awara Badal</option>
+            <option>Sangam</option>
+            <option>Waqt</option>
+            <option>Benazir</option>
+            <option>Door Ki Awaaz</option>
+            <option>Char Dervesh</option>
+            <option>Chitralekha</option>
+            <option>Door Gagan Ki Chhaon Men</option>
+            <option>Daal Me Kala</option>
+            <option>Jahan Ara</option>
+            <option>Ganga Ki Lahren</option>
+            <option>Gazal</option>
+            <option>Dulha Dulhan</option>
+            <option>Woh Kaun Thi?</option>
+            <option>Kohraa</option>
+            <option>Leader</option>
+            <option>Majboor</option>
+            <option>Mr. X in Bombay</option>
+            <option>Maain Bhi Ladki Hun</option>
+            <option>Mera Qasoor Kya Hai</option>
+            <option>Geet Gaaya Pattharon Ne</option>
+            <option>Sanjh Aur Savera</option>
+            <option>Pooja Ke Phool</option>
+            <option>Sant Gyaneshwar</option>
+            <option>Shabnam</option>
+            <option>Shagoon</option>
+            <option>Shehnai</option>
+            <option>Yaadein</option>
+            <option>Mere Mehboob</option>
+            <option>Taj Mahal</option>
+            <option>Phir Wohi Dil Laya Hoon</option>
+            <option>Gumrah</option>
+            <option>Phoolon Ki Sej</option>
+            <option>Mujhe Jeene Do</option>
+            <option>Akeli Mat Jaiyo</option>
+            <option>Shikari</option>
+            <option>Tere Ghar Ke Samne</option>
+            <option>Gehra Daag</option>
+            <option>Bandini</option>
+            <option>Aaj Aur Kal</option>
+            <option>Dil Ek Mandir</option>
+            <option>Bharosa</option>
+            <option>Bahurani</option>
+            <option>Bluff Master</option>
+            <option>Begaana</option>
+            <option>Dil Hi To Hai</option>
+            <option>Ek Dil Sao Afsane</option>
+            <option>Ghar Basake Dekho</option>
+            <option>Faulad</option>
+            <option>Grahasti</option>
+            <option>Kaun Apna Kaun Paraya</option>
+            <option>Kahin Pyaar Na Ho Jaaye</option>
+            <option>Kinare Kinare</option>
+            <option>The Householder</option>
+            <option>Meri Surat Teri Ankhen</option>
+            <option>Nartakee</option>
+            <option>Parasmani</option>
+            <option>Phool Bane Angaare</option>
+            <option>Pyar Ka Bandhan</option>
+            <option>Raaja</option>
+            <option>Rustom Sohrab</option>
+            <option>Rustom-E-Baghdad</option>
+            <option>Sehra</option>
+            <option>Shehar Aur Sapna</option>
+            <option>Ustadon Ke Ustad</option>
+            <option>Yeh Dil Kisko Doon</option>
+            <option>Yeh Rastey Hain Pyar Ke</option>
+            <option>Bees Saal Baad</option>
+            <option>Professor</option>
+            <option>Asli-Naqli</option>
+            <option>Dil Tera Diwana</option>
+            <option>Sangeet Samrat Tansen</option>
+            <option>Aashiq</option>
+            <option>Apna Banake Dekho</option>
+            <option>Anpadh</option>
+            <option>Dr. Vidya</option>
+            <option>Baat Ek Raat Ki</option>
+            <option>Girls' Hostel</option>
+            <option>Ek Musafir Ek Hasina</option>
+            <option>Hariyali Aur Rasta</option>
+            <option>Jhoola</option>
+            <option>Main Chup Rahungi</option>
+            <option>Man-Mauji</option>
+            <option>Half Ticket</option>
+            <option>Prem Patra</option>
+            <option>Aarti</option>
+            <option>Rakhi</option>
+            <option>Rungoli</option>
+            <option>Shaadi</option>
+            <option>Soorat Aur Seerat</option>
+            <option>Naughty Boy</option>
+            <option>Gunga Jumna</option>
+            <option>Gharana</option>
+            <option>Junglee</option>
+            <option>Tower House</option>
+            <option>Aas Ka Panchhi</option>
+            <option>Jab Pyar Kisise Hota Hai</option>
+            <option>Sasural</option>
+            <option>Hum Dono</option>
+            <option>China Town</option>
+            <option>Sahib Bibi Aur Ghulam</option>
+            <option>Boy Friend</option>
+            <option>Bhabhi Ki Chudiyan</option>
+            <option>Kabuliwala</option>
+            <option>Shola Aur Shabnam</option>
+            <option>Amar Rahe Ye Pyar</option>
+            <option>Chhaya</option>
+            <option>Dharmputra</option>
+            <option>Hamari Yaad Aayegi</option>
+            <option>Jhumroo</option>
+            <option>Maya</option>
+            <option>Mem-Didi</option>
+            <option>Mr. India</option>
+            <option>Nazrana</option>
+            <option>Opera House</option>
+            <option>Roop Ki Rani Choron Ka Raja</option>
+            <option>Sampoorna Ramayana</option>
+            <option>Stree</option>
+            <option>Zabak</option>
+            <option>Barsaat Ki Raat</option>
+            <option>Chaudhvin Ka Chand</option>
+            <option>Teen Kanya</option>
+            <option>Kohinoor</option>
+            <option>Dil Apna Aur Preet Parai</option>
+            <option>Jis Desh Men Ganga Behti Hai</option>
+            <option>Kanoon</option>
+            <option>Ghunghat</option>
+            <option>Kala Bazar</option>
+            <option>Anuradha</option>
+            <option>Bewaqoof</option>
+            <option>Love in Simla</option>
+            <option>Chhalia</option>
+            <option>College Girl</option>
+            <option>Bombai Ka Babu</option>
+            <option>Dil Bhi Tera Hum Bhi Tere</option>
+            <option>Bindya</option>
+            <option>Ek Ke Baad Ek</option>
+            <option>Ek Phool Char Kaante</option>
+            <option>Hum Hindustani</option>
+            <option>Jaali Note</option>
+            <option>Kalpana</option>
+            <option>Manzil</option>
+            <option>Masoom</option>
+            <option>Parakh</option>
+            <option>Return of Mr. Superman</option>
+            <option>Shriman Satyawadi</option>
+            <option>Singapore</option>
+            <option>Tu Nahin Aur Sahi</option>
+            <option>Usne Kaha Tha</option>
+            <option>Sarhad</option>
+            <option>Zameen Ke Tare</option>
+            <option>Paigham</option>
+            <option>Navrang</option>
+            <option>Anari</option>
+            <option>Dhool Ka Phool</option>
+            <option>Goonj Uthi Shehnai</option>
+            <option>Dil Deke Dekho</option>
+            <option>Sujata</option>
+            <option>Chhoti Bahen</option>
+            <option>Chirag Kahan Roshni Kahan</option>
+            <option>Ardhangini</option>
+            <option>Chand</option>
+            <option>Aangan</option>
+            <option>Daaka</option>
+            <option>Jawani Ki Hawa</option>
+            <option>Do Ustad</option>
+            <option>Char Dil Char Rahen</option>
+            <option>Insan Jaag Utha</option>
+            <option>Barkha</option>
+            <option>Kaagaz Ke Phool</option>
+            <option>Kanhaiya</option>
+            <option>Love Marriage</option>
+            <option>Main Nashe Men Hoon</option>
+            <option>Raat Ke Rahi</option>
+            <option>Madhumati</option>
+            <option>Chalti Ka Naam Gaadi</option>
+            <option>Yahudi</option>
+            <option>Phir Subha Hogi</option>
+            <option>Veerapandiya Kattabomman</option>
+            <option>Shararat</option>
+            <option>Sadhna</option>
+            <option>Parvarish</option>
+            <option>Kala Pani</option>
+            <option>Howrah Bridge</option>
+            <option>Dilli Ka Thug</option>
+            <option>Phagun</option>
+            <option>Adalat</option>
+            <option>Aji Bas Shukriya</option>
+            <option>Amar Deep</option>
+            <option>12 O'Clock</option>
+            <option>Detective</option>
+            <option>Devar Bhabhi</option>
+            <option>Do Phool</option>
+            <option>Ek Shola</option>
+            <option>Ghar Sansar</option>
+            <option>Jailor</option>
+            <option>Mehndi</option>
+            <option>Lajwanti</option>
+            <option>Khazanchi</option>
+            <option>Raj Tilak</option>
+            <option>Sahara</option>
+            <option>Sitaron Se Aage</option>
+            <option>Sohni Mahiwal</option>
+            <option>Solva Saal</option>
+            <option>Talaaq</option>
+            <option>Raagini</option>
+            <option>Naya Daur</option>
+            <option>Zimbo</option>
+            <option>Mother India</option>
+            <option>Do Ankhen Barah Haath</option>
+            <option>Paying Guest</option>
+            <option>Aasha</option>
+            <option>Bhabhi</option>
+            <option>Pyaasa</option>
+            <option>Tumsa Nahin Dekha</option>
+            <option>Musafir</option>
+            <option>Ab Dilli Dur Nahin</option>
+            <option>Sharada</option>
+            <option>Dekh Kabira Roya</option>
+            <option>Ek Gaon Ki Kahani</option>
+            <option>Kath Putli</option>
+            <option>Hum Panchhi Ek Daal Ke</option>
+            <option>Dushman</option>
+            <option>Baarish</option>
+            <option>Nau Do Gyarah</option>
+            <option>Pardesi</option>
+            <option>Nausherwan-E-Adil</option>
+            <option>Mai Baap</option>
+            <option>Suvarna Sundari</option>
+            <option>C.I.D.</option>
+            <option>Chori Chori</option>
+            <option>Basant Bahar</option>
+            <option>New Delhi</option>
+            <option>Raj Hath</option>
+            <option>Ek-Hi-Rasta</option>
+            <option>Toofan Aur Deeya</option>
+            <option>Bhai-Bhai</option>
+            <option>Funtoosh</option>
+            <option>Aan Baan</option>
+            <option>Bhagam Bhag</option>
+            <option>Devta</option>
+            <option>Hatimtai</option>
+            <option>Halaku</option>
+            <option>Ham Sab Chor Hain</option>
+            <option>Inspector</option>
+            <option>Kismet Ka Khel</option>
+            <option>Chhoo Mantar</option>
+            <option>Jagte Raho</option>
+            <option>Rangin Raaten</option>
+            <option>Sailaab</option>
+            <option>Azaad</option>
+            <option>Uran Khatola</option>
+            <option>Mr. & Mrs. '55</option>
+            <option>Insaniyat</option>
+            <option>Naya Andaz</option>
+            <option>Munimji</option>
+            <option>Pocket Maar</option>
+            <option>Devdas</option>
+            <option>Seema</option>
+            <option>Adil-E-Jahangir</option>
+            <option>Abe Hayat</option>
+            <option>Shree 420</option>
+            <option>Jhanak Jhanak Payal Baaje</option>
+            <option>Amaanat</option>
+            <option>Char Paise</option>
+            <option>Garam Coat</option>
+            <option>Baap Re Baap</option>
+            <option>Dev Anand in Goa (Alias Farar)</option>
+            <option>Marine Drive</option>
+            <option>House No. 44</option>
+            <option>Kundan</option>
+            <option>Milap</option>
+            <option>Railway Platform</option>
+            <option>Swami Vivekananda</option>
+            <option>Yasmin</option>
+            <option>Nastik</option>
+            <option>Nagin</option>
+            <option>Taxi Driver</option>
+            <option>Mirza Ghalib</option>
+            <option>Aar-Paar</option>
+            <option>Jagriti</option>
+            <option>Amar</option>
+            <option>Adhikar</option>
+            <option>Angarey</option>
+            <option>Boot Polish</option>
+            <option>Baadbaan</option>
+            <option>Baap Beti</option>
+            <option>Badshah</option>
+            <option>Bahut Din Huwe...</option>
+            <option>Biraj Bahu</option>
+            <option>Hamlet</option>
+            <option>Chandni Chowk</option>
+            <option>Mayurpankh</option>
+            <option>Naukari</option>
+            <option>Shabab</option>
+            <option>Subah Ka Tara</option>
+            <option>Anarkali</option>
+            <option>Ladki</option>
+            <option>Do Bigha Zamin</option>
+            <option>Foot Path</option>
+            <option>Parineeta</option>
+            <option>Shikast</option>
+            <option>Humsafar</option>
+            <option>Aah</option>
+            <option>Aabshar</option>
+            <option>Armaan</option>
+            <option>Alif-Laila</option>
+            <option>Aurat</option>
+            <option>Baaz</option>
+            <option>Jeewan Jyoti</option>
+            <option>Jhansi Ki Rani</option>
+            <option>Patita</option>
+            <option>Shahenshah</option>
+            <option>Baiju Bawra</option>
+            <option>Jaal</option>
+            <option>Daag</option>
+            <option>Teen Batti Char Raasta</option>
+            <option>Anhonee</option>
+            <option>Maa</option>
+            <option>Aan</option>
+            <option>Sangdil</option>
+            <option>Aandhiyan</option>
+            <option>Amber</option>
+            <option>Aladdin Aur Jadui Chirag</option>
+            <option>Anand Math</option>
+            <option>Deewana</option>
+            <option>Mr. Sampat</option>
+            <option>Parchhaiyan</option>
+            <option>Tamasha</option>
+            <option>Albela</option>
+            <option>Afsana</option>
+            <option>Baazi</option>
+            <option>Aaram</option>
+            <option>Bahar</option>
+            <option>Awaara</option>
+            <option>Deedar</option>
+            <option>Marmayogi</option>
+            <option>Hulchul</option>
+            <option>Jadoo</option>
+            <option>Kali Ghata</option>
+            <option>Madhosh</option>
+            <option>Naujawan</option>
+            <option>Saiyan</option>
+            <option>Sanam</option>
+            <option>Sazaa</option>
+            <option>Tarana</option>
+            <option>Aadhi Raat</option>
+            <option>Aankhen</option>
+            <option>Afsar</option>
+            <option>Anmol Ratan</option>
+            <option>Arzoo</option>
+            <option>Bawre Nain</option>
+            <option>Beqasoor</option>
+            <option>Babul</option>
+            <option>Dastan</option>
+            <option>Jogan</option>
+            <option>Samadhi</option>
+            <option>Sangram</option>
+            <option>Sargam</option>
+            <option>Sheesh Mahal</option>
+        </select>
+
+    <br>
+    <input type='submit' value="Submit" class="Recommend"/>
+    </form>
+
+    <br>
+    <!-- {{bolly1}} -->
+</center>
+</body>
+</html>

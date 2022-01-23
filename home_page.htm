@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='bolly.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home_page.css')}}">
+    <title>Movies Recommender</title>
+</head>
+<body class="bg" background="{{ url_for('static',filename='theatre_home.png')}}" style="background-size: cover;">
+    <center>
+    <h1> Please enter your choice :</h1>
+
+    <form action="{{ url_for('hollywood')}}" id="holly_movie">
+    
+    <input type="submit" value="Hollywood" id="holly_movie" class="hollywood">
+</form>
+    
+    <form action="{{ url_for('bollywood')}}" id="bolly_movie">
+    
+    <input type="submit" value="Bollywood" id="bolly_movie" name="Bollywood" class="bollywood">
+    </form>
+    </center>
+</body>
+</html>
